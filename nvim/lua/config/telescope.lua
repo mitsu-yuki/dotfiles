@@ -1,4 +1,14 @@
 require('telescope').setup {
+  defaults = {
+    mappings = {
+      i = {
+        ["<C-c>"] = {"<esc>", type = "command"},
+      },
+      n = {
+        ["<C-c>"] = require('telescope.actions').close,
+      },
+    },
+  },
 }
 
 local builtin = require('telescope.builtin')
