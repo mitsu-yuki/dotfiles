@@ -33,12 +33,20 @@ require('packer').startup(function(use)
   -- ステータスライン
   use {
     'nvim-lualine/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true},
+    requires = {'nvim-tree/nvim-web-devicons'},
     config = function()
       require('config.lualine')
     end
   }
 
+  -- tabline
+  use {
+    'akinsho/bufferline.nvim',
+    requires = {'nvim-tree/nvim-web-devicons'},
+    config = function()
+      require('config.bufferline')
+    end
+  }
   -- ファジーファインダー
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -60,7 +68,7 @@ require('packer').startup(function(use)
     end
   }
 
-  -- カラースキーム
+  --  color scheme
   use {
     'navarasu/onedark.nvim',
     config = function()
@@ -81,7 +89,7 @@ require('packer').startup(function(use)
   -- treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
-    cmd = ':TSupdate',
+    build = ':TSupdate',
     config = function()
       require('config.nvim-treesitter')
     end
@@ -91,6 +99,13 @@ require('packer').startup(function(use)
     'lukas-reineke/indent-blankline.nvim',
     config = function()
       require('config.indent-blankline')
+    end
+  }
+  -- auto pair
+  use {
+    'windwp/nvim-autopairs',
+    config = function()
+      require('config.autopairs')
     end
   }
 end)

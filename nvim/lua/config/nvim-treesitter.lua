@@ -1,4 +1,4 @@
-require('nvim-treesitter.configs').setup(
+require('nvim-treesitter').setup({
   ensure_installed = {
     'c',
     'lua',
@@ -6,6 +6,6 @@ require('nvim-treesitter.configs').setup(
   },
   highlight = {
     enable = true,
-    disable = {'vim'}
+    disable = {'vim'},
   }
-)
+})
