@@ -63,4 +63,5 @@ vim.diagnostic.config({
     source = "always",
     format = fmt,
   },
+  signs = false,
 })
