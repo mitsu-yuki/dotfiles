@@ -164,4 +164,12 @@ require('packer').startup(function(use)
       require('config/nvim-hlslens')
     end,
   }
+
+-- 単語閉じるやつ
+  use {
+    "kylechui/nvim-surround",
+    config = function()
+      require('config.nvim-surround')
+    end,
+  }
 end)
