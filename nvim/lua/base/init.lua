@@ -26,3 +26,6 @@ vim.opt.hidden = true
 
 -- command alias
 vim.cmd 'command! Bd bd | bn'
+
+-- replace preview
+vim.opt.inccommand = 'split'
