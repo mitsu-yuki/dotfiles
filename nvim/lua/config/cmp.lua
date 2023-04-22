@@ -15,9 +15,27 @@ cmp.setup({
   sources = cmp.config.sources({
     {name = 'nvim_lsp'},
     {name = 'luasnip'},
-    {name = 'buffer'}
+    {name = 'buffer'},
+    {name = 'path'},
   }),
   experimental = {
     ghost_text = true
   }
+})
+
+-- search cmp
+cmp.setup.cmdline({'/', '?'},{
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    {name = 'buffer'},
+  }
+})
+
+-- command mode cmp
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    {name = 'path'},
+    {name = 'cmdline'},
+  })
 })
