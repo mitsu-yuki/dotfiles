@@ -108,4 +108,11 @@ require('packer').startup(function(use)
       require('config.autopairs')
     end
   }
+  -- smart split
+  use {
+    'mrjones2014/smart-splits.nvim',
+    config = function()
+      require('config.smart-splits')
+    end
+  }
 end)
