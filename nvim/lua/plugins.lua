@@ -111,6 +111,13 @@ require('packer').startup(function(use)
       require('config.indent-blankline')
     end
   }
+  -- print function name on cursole
+  use {
+    'nvim-treesitter/nvim-treesitter-context',
+    config = function()
+      require('config.nvim-treesitter-context')
+    end
+  }
   -- auto pair
   use {
     'windwp/nvim-autopairs',
