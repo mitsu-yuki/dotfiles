@@ -1,6 +1,7 @@
 require('transparent').setup({
   enable = true,
   extra_groups = {
-    'NvimTreeNormal'
+    'NvimTreeNormal',
+    'NvimTreeEndOfBuffer'
   }
 })
