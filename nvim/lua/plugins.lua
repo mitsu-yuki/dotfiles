@@ -172,4 +172,12 @@ require('packer').startup(function(use)
       require('config.nvim-surround')
     end,
   }
+
+-- 横移動強化
+  use {
+    "unblevable/quick-scope",
+    config = function()
+      require('config.quick-scope')
+    end,
+  }
 end)
