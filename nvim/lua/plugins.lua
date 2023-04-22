@@ -1,16 +1,34 @@
 vim.cmd('packadd packer.nvim')
 
+load_conf = function(name)
+  return require(string.format("config.%s", name))
+end
+
 require('packer').startup(function(use)
   use {'wbthomason/packer.nvim'}
   -- LSP
   use {'neovim/nvim-lspconfig'}
-  use {'williamboman/mason.nvim'}
+  use {
+    'williamboman/mason.nvim',
+    config = function()
+      require('config.mason')
+    end
+  }
   use {'williamboman/mason-lspconfig.nvim'}
 
   -- 補完
-  use {'hrsh7th/nvim-cmp'}
+  use {
+    'hrsh7th/nvim-cmp',
+    config = function()
+      require('config.cmp')
+    end
+  }
   use {'hrsh7th/cmp-nvim-lsp'}
-  use {'hrsh7th/vim-vsnip'}
+  use {'hrsh7th/cmp-buffer'}
+  use {'hrsh7th/cmp-path'}
+  use {'hrsh7th/cmp-cmdline'}
+  use {'L3MON4D3/LuaSnip'}
+  use {'saadparwaiz1/cmp_luasnip'}
 
   -- ステータスライン
   use {
@@ -32,7 +50,6 @@ require('packer').startup(function(use)
       require('config.telescope')
     end
   }
-
   use {
     'nvim-telescope/telescope-frecency.nvim',
     requires = {
@@ -61,13 +78,19 @@ require('packer').startup(function(use)
      require('config.nvim-tree')
    end
  }
-
- -- indent blankline
- use {
-   'lukas-reineke/indent-blankline.nvim',
-   config = function()
-     require('config.indent-blankline')
-   end
- }
+  -- treesitter
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    cmd = ':TSupdate',
+    config = function()
+      require('config.nvim-treesitter')
+    end
+  }
+  -- indent blankline
+  use {
+    'lukas-reineke/indent-blankline.nvim',
+    config = function()
+      require('config.indent-blankline')
+    end
+  }
 end)
-
