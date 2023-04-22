@@ -156,6 +156,9 @@ require('packer').startup(function(use)
     config = function()
       require('config.nvim-scrollbar')
     end,
+    requires = {
+      'kevinhwang91/nvim-hlslens', 'lewis6991/gitsigns.nvim',
+    },
   }
 -- search highlight
   use {

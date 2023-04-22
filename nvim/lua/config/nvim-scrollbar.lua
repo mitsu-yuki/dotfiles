@@ -1,6 +1,8 @@
+local colors = require('onedark.colors')
+
 require('scrollbar').setup({
-  handle = {
-    color = require('onedark').setup()
+  marks = {
+    Search = { color = colors.orange },
   },
   excluded_filetypes = {
     "NvimTree",
