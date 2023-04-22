@@ -164,7 +164,7 @@ require('packer').startup(function(use)
   use {
     'kevinhwang91/nvim-hlslens',
     config = function()
-      require('config/nvim-hlslens')
+      require('config.nvim-hlslens')
     end,
   }
 
