@@ -23,3 +23,6 @@ vim.keymap.set('t', '<ESC>', [[<C-\><C-n>]], {silent = true})
 
 -- don't check close buffer
 vim.opt.hidden = true
+
+-- command alias
+vim.cmd 'command! Bd bd | bn'
