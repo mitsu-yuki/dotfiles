@@ -75,7 +75,7 @@ require('packer').startup(function(use)
       require('config.onedark')
     end
   }
-  
+
   -- transparent background
   use {
     'xiyaowong/nvim-transparent',
@@ -142,5 +142,19 @@ require('packer').startup(function(use)
     config = function()
       require('config.gitsigns')
     end
+  }
+-- scroll bar
+  use {
+    "petertriho/nvim-scrollbar",
+    config = function()
+      require('config.nvim-scrollbar')
+    end,
+  }
+--seach highlight
+  use {
+    'kevinhwang91/nvim-hlslens',
+    config = function()
+      require('config/nvim-hlslens')
+    end,
   }
 end)
