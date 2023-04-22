@@ -104,6 +104,9 @@ require('packer').startup(function(use)
   -- indent blankline
   use {
     'lukas-reineke/indent-blankline.nvim',
+    requieres = {
+      {'nvim-treesitter/nvim-treesitter'}
+    },
     config = function()
       require('config.indent-blankline')
     end
@@ -115,11 +118,22 @@ require('packer').startup(function(use)
       require('config.autopairs')
     end
   }
+  -- tabout
+  use {
+    'abecodes/tabout.nvim',
+    config = function()
+      require('config.tabout')
+    end
+  }
   -- smart split
   use {
     'mrjones2014/smart-splits.nvim',
     config = function()
       require('config.smart-splits')
     end
+  }
+  -- startup time
+  use {
+    'dstein64/vim-startuptime',
   }
 end)
