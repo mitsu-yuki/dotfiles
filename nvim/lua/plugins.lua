@@ -75,7 +75,14 @@ require('packer').startup(function(use)
       require('config.onedark')
     end
   }
-
+  
+  -- transparent background
+  use {
+    'xiyaowong/nvim-transparent',
+    config = function()
+      require('config.nvim-transparent')
+    end
+  }
   -- ファイラ
  use {
    'nvim-tree/nvim-tree.lua',
