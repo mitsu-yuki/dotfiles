@@ -21,5 +21,5 @@ vim.opt.clipboard:append{'unnamedplus'}
 vim.keymap.set('i', '<C-c>', '<ESC>')
 vim.keymap.set('t', '<ESC>', [[<C-\><C-n>]], {silent = true})
 
--- buffer
+-- don't check close buffer
 vim.opt.hidden = true
