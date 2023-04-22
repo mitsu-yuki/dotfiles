@@ -13,6 +13,8 @@ require('telescope').setup {
 }
 
 local builtin = require('telescope.builtin')
+local extensions = require('telescope').extensions
 vim.keymap.set('n', '<C-T>f', builtin.find_files, {})
 vim.keymap.set('n', '<C-T>g', builtin.live_grep, {})
-
+vim.keymap.set('n', '<C-T>g', builtin.live_grep, {})
+vim.keymap.set('n', '<C-T>F', extensions.frecency.frecency, {})
