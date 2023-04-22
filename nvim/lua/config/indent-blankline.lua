@@ -4,4 +4,5 @@ require('indent_blankline').setup {
 
 -- indent-blankline vim option
 vim.opt.list = true
-vim.opt.listchars = {space = ' '}
+vim.opt.listchars = { space = ' ', tab = '  ' }
+vim.t.indent_blankline_char = '┆'
