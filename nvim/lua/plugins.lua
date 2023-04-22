@@ -180,4 +180,11 @@ require('packer').startup(function(use)
       require('config.quick-scope')
     end,
   }
+-- git操作
+  use {
+    'dinhhuy258/git.nvim',
+    config = function()
+      require('config.git')
+    end,
+  }
 end)
