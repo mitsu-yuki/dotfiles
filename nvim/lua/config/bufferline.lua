@@ -1,9 +1,7 @@
 require('bufferline').setup{
   options = {
     mode = "buffers",
-    numbers = function(opts)
-     return string.format('%s', opts.raise(opts.id))
-    end,
+    numbers = 'buffer_id',
     offsets = {
       {
         filetype = "NvimTree",
