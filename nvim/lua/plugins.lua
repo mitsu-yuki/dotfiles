@@ -136,4 +136,11 @@ require('packer').startup(function(use)
   use {
     'dstein64/vim-startuptime',
   }
+-- git mods
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('config.gitsigns')
+    end
+  }
 end)
