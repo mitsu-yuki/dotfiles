@@ -1,11 +1,17 @@
-HOME := $(shell echo $HOME)
+HOME := $(shell echo $${HOME})
 DOTFILES_DIR := $(HOME)/dotfiles
+ZSH_DIR := $(DOTFILES_DIR)/zsh
 HOME_ZSHRC := $(HOME)/.zshrc
 XDG_CONFIG_HOME := $(HOME)/.config
 SHELDON_CONFIG := $(CONFIG_HOME)/sheldon
 
-.PHONY init
+OS := $(shell uname -s)
+.PHONY: init test
 
-init: $(HOME_ZSHRC) 
+init: $(HOME_ZSHRC) sheldon
 
-sheldon: 
+$(HOME_ZSHRC): 
+	ln -s $(HOME_ZSHRC) $(ZSH_DIR)/.zshrc
+
+sheldon:
+	
