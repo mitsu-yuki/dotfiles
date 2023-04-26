@@ -14,10 +14,10 @@ SYM_SHELDON_TOML := $(SHELDON_DEFAULT_DIR)/plugins.toml
 init: $(SYM_ZSHRC) $(SYM_SHELDON_TOML)
 
 $(SYM_ZSHRC):
-	ln -s $(HOME)/.zshrc $(DOTFILES_ZSH_DIR)/zshrc
+	ln -s $(DOTFILES_ZSH_DIR)/zshrc $(HOME)/.zshrc
 
 $(SYM_SHELDON_TOML): $(SHELDON_DEFAULT_DIR)
-	ln -s $(SHELDON_DEFAULT_DIR)/plugins.toml $(DOTFILES_ZSH_DIR)/sheldon_plugins.toml
+	ln -s $(DOTFILES_ZSH_DIR)/sheldon_plugins.toml $(SHELDON_DEFAULT_DIR)/plugins.toml
 
 $(SHELDON_DEFAULT_DIR):
 	mkdir -p $(SHELDON_DEFAULT_DIR)
