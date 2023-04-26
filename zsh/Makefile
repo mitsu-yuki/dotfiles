@@ -1,4 +1,4 @@
-HOME := $(shell echo $HOME)
+HOME := $(shell echo $$HOME)
 DOTFILES_DIR := $(HOME)/dotfiles
 DOTFILES_ZSH_DIR := $(DOTFILES_DIR)/zsh
 
