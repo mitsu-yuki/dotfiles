@@ -1,6 +1,5 @@
 HOME := $(shell echo $$HOME)
 DOTFILES_DIR := $(HOME)/dotfiles
-DOTFILES_ZSH_DIR := $(DOTFILES_DIR)/zsh
 
 # dotfiles path
 DOTFILES_ZSH_DIR := $(DOTFILES_DIR)/zsh
@@ -23,6 +22,7 @@ $(SYM_SHELDON_TOML): $(SHELDON_CONFIG_DIR)
 	ln -s $(DOTFILES_ZSH_DIR)/sheldon_plugins.toml $(SHELDON_CONFIG_DIR)/plugins.toml
 $(SHELDON_CONFIG_DIR):
 	mkdir -p $(SHELDON_CONFIG_DIR)
+
 
 # for sheldon
 sheldon_plugin: $(SHELDON_DATA_DIR)
