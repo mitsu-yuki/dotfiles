@@ -4,6 +4,7 @@ DOTFILES_DIR := $(HOME)/dotfiles
 # dotfiles path
 DOTFILES_ZSH_DIR := $(DOTFILES_DIR)/zsh
 DOTFILES_BIN_DIR := $(DOTFILES_DIR)/bin
+HOME_BIN_DIR := $(HOME)/bin
 SYM_ZSHRC := $(HOME)/.zshrc
 
 # sheldin path
@@ -25,7 +26,7 @@ $(SHELDON_CONFIG_DIR):
 	mkdir -p $(SHELDON_CONFIG_DIR)
 install_sheldon: $(DOTFILES_BIN_DIR)
 	curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
-    | bash -s -- --repo rossmacarthur/sheldon --to $(DOTFILES_BIN_DIR)
+    | bash -s -- --repo rossmacarthur/sheldon --to $(HOME_BIN_DIR)
 
 $(DOTFILES_BIN_DIR):
 	mkdir -p $(DOTFILES_BIN_DIR)
