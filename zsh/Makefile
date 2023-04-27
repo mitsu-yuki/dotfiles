@@ -9,7 +9,6 @@ SYM_ZSHRC := $(HOME)/.zshrc
 
 # sheldin path
 SHELDON_CONFIG_DIR := $(HOME)/.config/sheldon
-SHELDON_DATA_DIR := $(HOME)/.local/share/sheldon
 SYM_SHELDON_TOML := $(SHELDON_CONFIG_DIR)/plugins.toml
 
 # p10k.zsh
@@ -32,6 +31,6 @@ $(DOTFILES_BIN_DIR):
 	mkdir -p $(DOTFILES_BIN_DIR)
 
 # for sheldon
-sheldon_plugin: $(SHELDON_DATA_DIR)
+sheldon_plugin: $(SYM_SHELDON_TOML)
 $(SYM_P10K): $(SYM_SHELDON_TOML)
 	ln -s $(SYM_P10K) $(HOME)/.p10k.zsh
