@@ -8,5 +8,7 @@ RUN apt update -y \
   && gpasswd -a ${USER} sudo
 USER ${USER}
 WORKDIR ${HOME}
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> \
+/etc/sudoers
 RUN cd ${HOME}; git clone https://github.com/mitsu-yuki/dotfiles
 CMD [ "/bin/zsh" ]
