@@ -29,8 +29,3 @@ install_sheldon: $(DOTFILES_BIN_DIR)
 
 $(DOTFILES_BIN_DIR):
 	mkdir -p $(DOTFILES_BIN_DIR)
-
-# for sheldon
-sheldon_plugin: $(SYM_P10K)
-$(SYM_P10K): $(SYM_SHELDON_TOML)
-	ln -s $(SYM_P10K) $(HOME)/.p10k.zsh
