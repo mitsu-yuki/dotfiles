@@ -1,5 +1,6 @@
 require('telescope').setup {
   defaults = {
+    sorting_strategy = 'ascending',
     mappings = {
       i = {
         ["<C-c>"] = {"<esc>", type = "command"},
