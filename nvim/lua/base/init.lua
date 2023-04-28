@@ -29,3 +29,9 @@ vim.cmd 'command! Bd bd | bn'
 
 -- replace preview
 vim.opt.inccommand = 'split'
+
+-- disable linenumber for terminal mode
+vim.api.nvim_create_autocmd({"TermOpen"},{
+  pattern = {"*"},
+  command = "setlocal nonumber norelativenumber"
+})
