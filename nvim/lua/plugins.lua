@@ -89,6 +89,7 @@ require('packer').startup(function(use)
    requires = {
      {'nvim-tree/nvim-web-devicons'}, -- optional, for file icons
    },
+   commit = "e14989c0eaa6f9c299d48f7e45ce1ed04b21180f",
    config = function()
      require('config.nvim-tree')
    end
