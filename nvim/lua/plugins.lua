@@ -197,4 +197,12 @@ require('packer').startup(function(use)
       require('config.align')
     end,
   }
+-- TODOのハイライト
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require('config.todo-comments')
+    end,
+  }
 end)
