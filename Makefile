@@ -56,6 +56,7 @@ DOTFILES_ZSH_SHELDON_DATA_DIR := $(DOTFILES_ZSH_DIR)/sheldon_data
 
 # $HOME/dotfiles/nvim
 DOTFILES_NVIM_CACHE_DIR       := $(DOTFILES_NVIM_DIR)/cache
+DOTFILES_NVIM_INIT_FILE       := $(DOTFILES_NVIM_DIR)/init.lua
 DOTFILES_NVIM_CACHE_DATA_DIR  := $(DOTFILES_NVIM_CACHE_DIR)/data
 DOTFILES_NVIM_CACHE_STATE_DIR := $(DOTFILES_NVIM_CACHE_DIR)/state
 .PHONY: init
@@ -83,7 +84,7 @@ ln:
 	$(call create_symlink,$(DOTFILES_ZSH_SHELDON_TOML),$(HOME_CONFIG_SHELDON_TOML))
 	$(call create_symlink,$(HOME_CONFIG_NVIM_INIT_LUA),$(DOTFILES_NVIM_INIT_FILE))
 	$(call create_symlink,$(DOTFILES_NVIM_CACHE_DATA_DIR),$(HOME_LOCAL_SHARE_NVIM_DIR))
-	$(call create_symlink,$(DOTFILES_NVIM_CACHE_STATE_DIR,$(HOME_LOCAL_STATE_NVIM_DIR)))
+	$(call create_symlink,$(DOTFILES_NVIM_CACHE_STATE_DIR),$(HOME_LOCAL_STATE_NVIM_DIR))
 
 zsh: init
 	curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
