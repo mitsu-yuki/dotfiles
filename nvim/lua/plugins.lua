@@ -147,9 +147,6 @@ require('packer').startup(function(use)
 -- scroll bar
   use {
     "petertriho/nvim-scrollbar",
-    setup = function()
-      require('config.onedark')
-    end,
     config = function()
       require('config.nvim-scrollbar')
     end,
@@ -157,26 +154,23 @@ require('packer').startup(function(use)
       'kevinhwang91/nvim-hlslens',
       'lewis6991/gitsigns.nvim',
     },
+    wants = { 'onedark.nvim' }
   }
 -- git status
   use {
     'lewis6991/gitsigns.nvim',
-    setup = function()
-      require('config.nvim-scrollbar')
-    end,
     config = function()
       require('config.gitsigns')
-    end
+    end,
+    wants = { 'nvim-scrollbar' },
   }
 -- search highlight
   use {
     'kevinhwang91/nvim-hlslens',
-    setup = function()
-      require('config.nvim-scrollbar')
-    end,
     config = function()
       require('config.nvim-hlslens')
     end,
+    wants = { 'nvim-scrollbar' },
   }
 
 -- 単語閉じるやつ
