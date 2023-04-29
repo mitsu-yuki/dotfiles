@@ -79,7 +79,7 @@ ln:
 	$(call create_symlink,$(DOTFILES_BIN_DIR),$(HOME_BIN_DIR))
 	$(call create_symlink,$(DOTFILES_ZSH_SHELDON_DATA_DIR),$(HOME_LOCAL_SHARE_SHELDON_DIR))
 	$(call create_symlink,$(DOTFILES_ZSH_SHELDON_TOML),$(HOME_CONFIG_SHELDON_TOML))
-	$(call create_symlink,$(DOTFILES_NVIM_INIT_FILE),$(HOME_CONFIG_NVIM_INIT_LUA))
+	$(call create_symlink,$(HOME_CONFIG_NVIM_INIT_LUA),$(DOTFILES_NVIM_INIT_FILE))
 	$(call create_symlink,$(DOTFILES_NVIM_CACHE_DATA_DIR),$(HOME_LOCAL_SHARE_NVIM_DIR))
 	$(call create_symlink,$(DOTFILES_NVIM_CACHE_STATE_DIR,$(HOME_LOCAL_STATE_NVIM_DIR)))
 
