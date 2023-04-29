@@ -7,15 +7,15 @@ HOME := $(shell echo $$HOME)
 # |   |   |-- .zshrc                # DOTFILES_ZSH_ZSHRC
 # |   |   |-- .p10k                 # DOTFILES_ZSH_P10K
 # |   |   |-- sheldon_plugins.toml  # DOTFILES_ZSH_SHELDON_TOML
-# |   |   `-- (:TODO:) sheldon_data   # DOTFILES_ZSH_SHELDON_DATA_DIR
-# |   |-- (TODO:) bin                # DOTFILES_BIN_DIR
+# |   |   `-- (TODO) sheldon_data   # DOTFILES_ZSH_SHELDON_DATA_DIR
+# |   |-- (TODO) bin                # DOTFILES_BIN_DIR
 # |   |-- nvim                      # DOTFILES_NEOVIM_DIR
 # |   `-- tmux                      # DOTFILES_TMUX_DIR
 # |-- .config
-# |   `-- (TODO:) sheldon
+# |   `-- (TODO) sheldon
 # |       `-- plugins.toml          # HOME_CONFIG_SHELDON_TOML (symlink to ~/dotfiles/zsh/sheldon_plugins.toml)
 # |-- .local
-# |   `-- (TODO:) share
+# |   `-- (TODO) share
 # |       `-- sheldon               # HOME_LOCAL_SHARE_SHELDON_DIR (symlink to ~/dotfiles/zsh/sheldon_data)
 # :
 # |-- .zshrc                        # HOME_ZSHRC (symlink to ~/dotfiles/zsh/.zshrc)
@@ -54,9 +54,10 @@ ln:
 	$(call create_symlink,$(DOTFILES_ZSH_ZSHRC),$(HOME_ZSHRC))
 	$(call create_symlink,$(DOTFILES_ZSH_P10K),$(HOME_P10K))
 	$(call create_symlink,$(DOTFILES_BIN_DIR),$(HOME_BIN_DIR))
-	$(call create_symlink,$(DOTFILES_ZSH_SHELDON_TOML) $(HOME_CONFIG_SHELDON_TOML))
+	$(call create_symlink,$(DOTFILES_ZSH_SHELDON_DATA_DIR),$(HOME_LOCAL_SHARE_SHELDON_DIR))
+	$(call create_symlink,$(DOTFILES_ZSH_SHELDON_TOML),$(HOME_CONFIG_SHELDON_TOML))
 
-install_sheldon: mkdir
+install_sheldon: mkdir ln
 	curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
     | bash -s -- --repo rossmacarthur/sheldon --to $(value HOME_BIN_DIR)
 
