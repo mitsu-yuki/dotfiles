@@ -190,4 +190,11 @@ require('packer').startup(function(use)
       require('config.git')
     end,
   }
+-- 垂直方向にインデント揃えるやつ
+  use {
+    'Vonr/align.nvim',
+    config = function()
+      require('config.align')
+    end,
+  }
 end)
