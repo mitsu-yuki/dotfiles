@@ -1,0 +1,5 @@
+alias rm='rm -i'
+alias rm='cp -i'
+alias cp='cp -i'
+alias ll='ls -la'
+alias vimi='nvim'
