@@ -6,6 +6,7 @@ defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
 # lazy load plugin
 [plugins.zsh-defer]
 github = "romkatv/zsh-defer"
+rev = "57a6650ff262f577278275ddf11139673e01e471"
 
 # powerline
 [plugins.powerlevel10k]
