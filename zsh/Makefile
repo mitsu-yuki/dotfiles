@@ -51,10 +51,10 @@ mkdir:
 	mkdir -p $(DOTFILES_BIN_DIR)
 
 ln:
-	$(call create_symlink,$($DOTFILES_ZSH_ZSHRC),$(HOME_ZSHRC))
+	$(call create_symlink,$(DOTFILES_ZSH_ZSHRC),$(HOME_ZSHRC))
 	$(call create_symlink,$(DOTFILES_ZSH_P10K),$(HOME_P10K))
 	$(call create_symlink,$(DOTFILES_BIN_DIR),$(HOME_BIN_DIR))
-	ln -s $(DOTFILES_ZSH_SHELDON_TOML) $(HOME_CONFIG_SHELDON_TOML)
+	$(call create_symlink,$(DOTFILES_ZSH_SHELDON_TOML) $(HOME_CONFIG_SHELDON_TOML))
 
 install_sheldon: mkdir
 	curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
