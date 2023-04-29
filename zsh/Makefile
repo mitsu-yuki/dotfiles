@@ -28,7 +28,7 @@ HOME_BIN_DIR                  := $(HOME)/bin
 HOME_ZSHRC                    := $(HOME)/.zshrc
 HOME_P10K                     := $(HOME)/.p10k.zsh
 HOME_CONFIG_SHELDON_TOML := $(HOME)/.config/sheldon/plugins.toml
-HOME_LOCAL_SHARE_SHELDON_DIR := $(HOME)/.local/sheldon
+HOME_LOCAL_SHARE_SHELDON_DIR := $(HOME)/.local/share/sheldon
 
 # $HOME/dotfiles
 DOTFILES_ZSH_DIR              := $(DOTFILES_DIR)/zsh
