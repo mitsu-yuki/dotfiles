@@ -61,7 +61,8 @@ DOTFILES_NVIM_CACHE_DATA_DIR  := $(DOTFILES_NVIM_CACHE_DIR)/data
 DOTFILES_NVIM_CACHE_STATE_DIR := $(DOTFILES_NVIM_CACHE_DIR)/state
 .PHONY: init
 
-.DEFAULT_GOAL: zsh nvim
+.DEFAULT_GOAL := all
+all: zsh nvim
 init: mkdir ln
 # create symlink for zsh and sheldon
 mkdir:
