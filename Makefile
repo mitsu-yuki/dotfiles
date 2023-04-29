@@ -67,7 +67,6 @@ mkdir:
 	# make require dir
 	mkdir -p $(dir $(HOME_CONFIG_SHELDON_TOML))
 	mkdir -p $(dir $(HOME_LOCAL_SHARE_SHELDON_DIR))
-	mkdir -p $(dir $(HOME_CONFIG_NVIM_INIT_LUA))
 	mkdir -p $(HOME_LOCAL_SHARE_NVIM_DIR)
 	mkdir -p $(HOME_LOCAL_STATE_NVIM_DIR)
 	mkdir -p $(DOTFILES_ZSH_SHELDON_DATA_DIR)
