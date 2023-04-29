@@ -4,3 +4,4 @@ require('transparent').setup({
     'NvimTreeEndOfBuffer'
   }
 })
+require('transparent').toggle(true)
