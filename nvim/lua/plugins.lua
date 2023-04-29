@@ -144,26 +144,36 @@ require('packer').startup(function(use)
   use {
     'dstein64/vim-startuptime',
   }
--- git mods
-  use {
-    'lewis6991/gitsigns.nvim',
-    config = function()
-      require('config.gitsigns')
-    end
-  }
 -- scroll bar
   use {
     "petertriho/nvim-scrollbar",
+    setup = function()
+      require('config.onedark')
+    end,
     config = function()
       require('config.nvim-scrollbar')
     end,
     requires = {
-      'kevinhwang91/nvim-hlslens', 'lewis6991/gitsigns.nvim',
+      'kevinhwang91/nvim-hlslens',
+      'lewis6991/gitsigns.nvim',
     },
+  }
+-- git status
+  use {
+    'lewis6991/gitsigns.nvim',
+    setup = function()
+      require('config.nvim-scrollbar')
+    end,
+    config = function()
+      require('config.gitsigns')
+    end
   }
 -- search highlight
   use {
     'kevinhwang91/nvim-hlslens',
+    setup = function()
+      require('config.nvim-scrollbar')
+    end,
     config = function()
       require('config.nvim-hlslens')
     end,
