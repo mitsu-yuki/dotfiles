@@ -3,7 +3,7 @@ FROM anatolelucet/neovim:stable-ubuntu
 ENV USER=user HOME=/home/user SHELL=/bin/zsh
 RUN apt update -y \
   && apt upgrade -y \
-  && apt install curl git zsh make sudo vim -y \
+  && apt install gcc g++ curl git zsh make sudo vim -y \
   && useradd -m user -s /bin/zsh \
   && gpasswd -a ${USER} sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> \
