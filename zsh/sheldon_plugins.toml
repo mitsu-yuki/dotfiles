@@ -1,8 +1,38 @@
 shell = "zsh"
 
+[templates]
+defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
+
+# lazy load plugin
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
+
+# powerline
 [plugins.powerlevel10k]
 github = "romkatv/powerlevel10k"
+tag = "v1.17.0"
 
+# zsh-syntax-highlighting
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
+tag = "0.7.1"
+apply = ["defer"]
+
+# autosuggestions
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+tag = "v0.7.0"
+
+# history search
+[plugins.zsh-history-substring-search]
+github = "zsh-users/zsh-history-substring-search"
+
+# add completion
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+tag = "0.34.0"
+
+# powerline config
 [plugins.p10k]
 local = "~/dotfiles/zsh"
 use = [".p10k.zsh"]
