@@ -1,11 +1,19 @@
 export PATH="${HOME}/bin:${PATH}"
 typeset -U path PATH
-# これがあると初期設定ウィザードが起動しない
-# でもgitstatusdとかは作ってくれる
+
+# disable powerlevel10k startup wizard
 export POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+
+# Assign gitstatusd install dir
+export GITSTATUS_CACHE_DIR="${HOME}/.local/share/sheldon/repos/github.com/romkatv/powerlevel10k"
+
+# load managed sheldon plugins
 eval "$(sheldon source)"
 
-# TODO: 他のPCに持っていくための処理をどこかでやる
-# target_uname=$(uname -sm | tr '[A-Z]' '[a-z]')
-# powerlevel10k_path="${HOME}/.local/share/sheldon/repos/github.com/romkatv/powerlevel10k"
-# GITSTATUS_CACHE_DIR="$powerlevel10k_path"/gitstatus/usrbin "$powerlevel10k_path"/gitstatus/install -f -s "${target_uname% *}" -m "${target_uname#* }"
+# Warp is NOT SUPPORT powerlevel10k
+P10K_CONFIG_PATH="${HOME}/doftiles/zsh/.p10k.zsh"
+if [ "${TERM_PROGRAM}" = "WarpTerminal" ];then
+  eval "$(starship init zsh)"
+else
+  [ -f ${P10K_CONFIG_PATH}] && source ${P10K_CONFIG_PATH}
+fi
