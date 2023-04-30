@@ -1,0 +1,2 @@
+require('smart-splits').setup {
+}
