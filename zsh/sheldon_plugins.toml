@@ -36,11 +36,6 @@ apply = ["defer"]
 github = "zsh-users/zsh-completions"
 tag = "0.34.0"
 
-# powerline config
-[plugins.p10k]
-local = "~/dotfiles/zsh"
-use = [".p10k.zsh"]
-
 # user settings
 [plugins.dotfiles]
 local = "~/dotfiles/zsh/basic"
