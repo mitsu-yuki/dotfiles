@@ -5,6 +5,7 @@ HOME := $(shell echo $$HOME)
 # |-- dotfiles                      # DOTFILES_DIR
 # |   |-- zsh                       # DOTFILES_ZSH_DIR
 # |   |   |-- .zshrc                # DOTFILES_ZSH_ZSHRC
+# |   |   |-- starship.toml         # DOTFILES_ZSH_STARSHIP_TOML
 # |   |   |-- sheldon_plugins.toml  # DOTFILES_ZSH_SHELDON_TOML
 # |   |   `-- (MAKE) sheldon_data   # DOTFILES_ZSH_SHELDON_DATA_DIR
 # |   |-- (MAKE) bin                # DOTFILES_BIN_DIR
@@ -15,6 +16,7 @@ HOME := $(shell echo $$HOME)
 # |   |       `-- state             # DOTFILES_NVIM_CACHE_STATE_DIR
 # |   `-- tmux                      # DOTFILES_TMUX_DIR
 # |-- .config
+# |   |-- starship.toml # HOME_CONFIG_STARSHIP_TOML
 # |   |-- (MAKE)nvim
 # |   |   `-- init.lua              # HOME_CONFIG_NVIM_INIT_LUA (symlink to ~/dotfiles/nvim/init.lua)
 # |   `-- (MAKE) sheldon
@@ -34,6 +36,7 @@ HOME := $(shell echo $$HOME)
 DOTFILES_DIR                  := $(HOME)/dotfiles
 HOME_BIN_DIR                  := $(HOME)/bin
 HOME_ZSHRC                    := $(HOME)/.zshrc
+HOME_CONFIG_STARSHIP_TOML     := $(HOME)/.config/starship.toml
 HOME_CONFIG_SHELDON_TOML      := $(HOME)/.config/sheldon/plugins.toml
 HOME_CONFIG_NVIM_DIR          := $(HOME)/.config/nvim
 HOME_LOCAL_SHARE_NVIM_DIR     := $(HOME)/.local/share/nvim
@@ -47,6 +50,7 @@ DOTFILES_NVIM_DIR             := $(DOTFILES_DIR)/nvim
 
 # $HOME/dotfiles/zsh
 DOTFILES_ZSH_ZSHRC            := $(DOTFILES_ZSH_DIR)/.zshrc
+DOTFILES_ZSH_STARSHIP_TOML    := $(DOTFILES_ZSH_DIR)/starship.toml
 DOTFILES_ZSH_SHELDON_TOML     := $(DOTFILES_ZSH_DIR)/sheldon_plugins.toml
 DOTFILES_ZSH_SHELDON_DATA_DIR := $(DOTFILES_ZSH_DIR)/sheldon_data
 
@@ -55,7 +59,7 @@ DOTFILES_NVIM_CACHE_DIR       := $(DOTFILES_NVIM_DIR)/cache
 DOTFILES_NVIM_INIT_FILE       := $(DOTFILES_NVIM_DIR)/init.lua
 DOTFILES_NVIM_CACHE_DATA_DIR  := $(DOTFILES_NVIM_CACHE_DIR)/data
 DOTFILES_NVIM_CACHE_STATE_DIR := $(DOTFILES_NVIM_CACHE_DIR)/state
-.PHONY: init
+.PHONY: init starship
 
 .DEFAULT_GOAL := all
 all: zsh nvim
@@ -91,6 +95,9 @@ zsh: init
 nvim: init
 	git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 	 ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+starship:
+	$(call create_symlink,$(DOTFILES_ZSH_STARSHIP_TOML),$(HOME_CONFIG_STARSHIP_TOML))
 
 define create_symlink
 	$(eval source := $(1))
