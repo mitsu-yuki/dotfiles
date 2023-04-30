@@ -11,9 +11,9 @@ export GITSTATUS_CACHE_DIR="${HOME}/.local/share/sheldon/repos/github.com/romkat
 eval "$(sheldon source)"
 
 # Warp is NOT SUPPORT powerlevel10k
-P10K_CONFIG_PATH="${HOME}/doftiles/zsh/.p10k.zsh"
+P10K_CONFIG_PATH="${HOME}/dotfiles/zsh/.p10k.zsh"
 if [ "${TERM_PROGRAM}" = "WarpTerminal" ];then
   eval "$(starship init zsh)"
 else
-  [ -f ${P10K_CONFIG_PATH}] && source ${P10K_CONFIG_PATH}
+  [ -f ${P10K_CONFIG_PATH} ] && source ${P10K_CONFIG_PATH}
 fi
