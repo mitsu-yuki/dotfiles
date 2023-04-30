@@ -5,7 +5,6 @@ HOME := $(shell echo $$HOME)
 # |-- dotfiles                      # DOTFILES_DIR
 # |   |-- zsh                       # DOTFILES_ZSH_DIR
 # |   |   |-- .zshrc                # DOTFILES_ZSH_ZSHRC
-# |   |   |-- .p10k                 # DOTFILES_ZSH_P10K
 # |   |   |-- sheldon_plugins.toml  # DOTFILES_ZSH_SHELDON_TOML
 # |   |   `-- (MAKE) sheldon_data   # DOTFILES_ZSH_SHELDON_DATA_DIR
 # |   |-- (MAKE) bin                # DOTFILES_BIN_DIR
@@ -29,14 +28,12 @@ HOME := $(shell echo $$HOME)
 # |       `-- sheldon               # HOME_LOCAL_SHARE_SHELDON_DIR (symlink to ~/dotfiles/zsh/sheldon_data)
 # :
 # |-- .zshrc                        # HOME_ZSHRC (symlink to ~/dotfiles/zsh/.zshrc)
-# |-- .p10k.zsh                     # HOME_P10K (symlink to ~/dotfiles/zsh/.p10k.zsh)
 # `-- (MAKE)bin                     # HOME_BIN_DIR (add symlink dir)
 
 # $HOME path
 DOTFILES_DIR                  := $(HOME)/dotfiles
 HOME_BIN_DIR                  := $(HOME)/bin
 HOME_ZSHRC                    := $(HOME)/.zshrc
-HOME_P10K                     := $(HOME)/.p10k.zsh
 HOME_CONFIG_SHELDON_TOML      := $(HOME)/.config/sheldon/plugins.toml
 HOME_CONFIG_NVIM_DIR          := $(HOME)/.config/nvim
 HOME_LOCAL_SHARE_NVIM_DIR     := $(HOME)/.local/share/nvim
@@ -50,7 +47,6 @@ DOTFILES_NVIM_DIR             := $(DOTFILES_DIR)/nvim
 
 # $HOME/dotfiles/zsh
 DOTFILES_ZSH_ZSHRC            := $(DOTFILES_ZSH_DIR)/.zshrc
-DOTFILES_ZSH_P10K             := $(DOTFILES_ZSH_DIR)/.p10k.zsh
 DOTFILES_ZSH_SHELDON_TOML     := $(DOTFILES_ZSH_DIR)/sheldon_plugins.toml
 DOTFILES_ZSH_SHELDON_DATA_DIR := $(DOTFILES_ZSH_DIR)/sheldon_data
 
@@ -80,7 +76,6 @@ mkdir:
 
 ln:
 	$(call create_symlink,$(DOTFILES_ZSH_ZSHRC),$(HOME_ZSHRC))
-	$(call create_symlink,$(DOTFILES_ZSH_P10K),$(HOME_P10K))
 	$(call create_symlink,$(DOTFILES_BIN_DIR),$(HOME_BIN_DIR))
 	$(call create_symlink,$(DOTFILES_ZSH_SHELDON_DATA_DIR),$(HOME_LOCAL_SHARE_SHELDON_DIR))
 	$(call create_symlink,$(DOTFILES_ZSH_SHELDON_TOML),$(HOME_CONFIG_SHELDON_TOML))
