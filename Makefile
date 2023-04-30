@@ -30,7 +30,7 @@ HOME := $(shell echo $$HOME)
 # :
 # |-- .zshrc                        # HOME_ZSHRC (symlink to ~/dotfiles/zsh/.zshrc)
 # |-- .p10k.zsh                     # HOME_P10K (symlink to ~/dotfiles/zsh/.p10k.zsh)
-# `-- bin                           # HOME_BIN_DIR (symlink to ~/dotfiles/bin)
+# `-- (MAKE)bin                     # HOME_BIN_DIR (add symlink dir)
 
 # $HOME path
 DOTFILES_DIR                  := $(HOME)/dotfiles
@@ -69,6 +69,7 @@ mkdir:
 	# make require dir
 	mkdir -p $(dir $(HOME_CONFIG_SHELDON_TOML))
 	mkdir -p $(dir $(HOME_LOCAL_SHARE_SHELDON_DIR))
+	mkdir -p $(HOME_BIN_DIR)
 	mkdir -p $(HOME_LOCAL_SHARE_NVIM_DIR)
 	mkdir -p $(HOME_LOCAL_STATE_NVIM_DIR)
 	mkdir -p $(DOTFILES_ZSH_SHELDON_DATA_DIR)
@@ -89,7 +90,8 @@ ln:
 
 zsh: init
 	curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
-    | bash -s -- --repo rossmacarthur/sheldon --to $(value HOME_BIN_DIR)
+    | bash -s -- --repo rossmacarthur/sheldon --to $(value DOTFILES_BIN_DIR)
+	$(call create_symlink,$(DOTFILES_BIN_DIR)/sheldon,$(HOME_BIN_DIR)/sheldon)
 
 nvim: init
 	git clone --depth 1 https://github.com/wbthomason/packer.nvim\
