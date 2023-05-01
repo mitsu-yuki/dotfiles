@@ -23,11 +23,10 @@ HOME := $(shell echo $$HOME)
 # |       `-- plugins.toml          # HOME_CONFIG_SHELDON_TOML (symlink to ~/dotfiles/zsh/sheldon_plugins.toml)
 # |-- .local
 # |   |-- (MAKE)share
-# |   |    `-- nvim                 # HOME_LOCAL_SHARE_NVIM_DIR (symlink to ~/dotfiles/nvim/cache/data)
-# |   |-- (MAKE)state
-# |   |    `-- nvim                 # HOME_LOCAL_STATE_NVIM_DIR (symlink to ~/dotfiles/nvim/cache/state)
-# |   `-- (MAKE) share
-# |       `-- sheldon               # HOME_LOCAL_SHARE_SHELDON_DIR (symlink to ~/dotfiles/zsh/sheldon_data)
+# |   |   |-- sheldon               # HOME_LOCAL_SHARE_SHELDON_DIR (symlink to ~/dotfiles/zsh/sheldon_data)
+# |   |   `-- nvim                  # HOME_LOCAL_SHARE_NVIM_DIR (symlink to ~/dotfiles/nvim/cache/data)
+# |   `-- (MAKE)state
+# |        `-- nvim                 # HOME_LOCAL_STATE_NVIM_DIR (symlink to ~/dotfiles/nvim/cache/state)
 # :
 # |-- .zshrc                        # HOME_ZSHRC (symlink to ~/dotfiles/zsh/.zshrc)
 # `-- (MAKE)bin                     # HOME_BIN_DIR (add symlink dir)
@@ -39,6 +38,7 @@ HOME_ZSHRC                    := $(HOME)/.zshrc
 HOME_CONFIG_STARSHIP_TOML     := $(HOME)/.config/starship.toml
 HOME_CONFIG_SHELDON_TOML      := $(HOME)/.config/sheldon/plugins.toml
 HOME_CONFIG_NVIM_DIR          := $(HOME)/.config/nvim
+HOME_LOCAL_STATE_DIR          := $(HOME)/.local/state
 HOME_LOCAL_SHARE_NVIM_DIR     := $(HOME)/.local/share/nvim
 HOME_LOCAL_STATE_NVIM_DIR     := $(HOME)/.local/state/nvim
 HOME_LOCAL_SHARE_SHELDON_DIR  := $(HOME)/.local/share/sheldon
@@ -69,6 +69,7 @@ mkdir:
 	# make require dir
 	mkdir -p $(dir $(HOME_CONFIG_SHELDON_TOML))
 	mkdir -p $(dir $(HOME_LOCAL_SHARE_SHELDON_DIR))
+	mkdir -p $(HOME_LOCAL_STATE_DIR)
 	mkdir -p $(HOME_BIN_DIR)
 	mkdir -p $(DOTFILES_ZSH_SHELDON_DATA_DIR)
 	mkdir -p $(DOTFILES_BIN_DIR)
