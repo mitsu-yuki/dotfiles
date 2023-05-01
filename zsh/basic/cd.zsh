@@ -27,7 +27,7 @@
      [[ -z $index ]] && index=1
      adir=$(dirs +$index)
      if [[ -z "$adir" ]]; then
-         if [[ "$SHELL" == "/bin/zsh" ]]; then
+         if [[ "$SHELL" =~ "zsh" ]]; then
              cd ~${index}
              return 0
              else
