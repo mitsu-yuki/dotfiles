@@ -1,3 +1,4 @@
 bin/
 zsh/sheldon_data/
 nvim/plugin/
+nvim/cache
