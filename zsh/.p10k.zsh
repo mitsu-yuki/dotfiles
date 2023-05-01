@@ -34,6 +34,7 @@
     # =========================[ Line #1 ]=========================
     virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
     # os_icon               # os identifier
+    ssh
     context                 # user@hostname
     dir                     # current directory
     vcs                     # git status
@@ -937,7 +938,7 @@
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND='#9A348E'
   # Context color in SSH without privileges.
   typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_FOREGROUND='#FFFFFF'
-  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_BACKGROUND='#047E84'
+  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_BACKGROUND='#9A348E'
   # Default context color (no privileges, no SSH).
   typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND='#FFFFFF'
   typeset -g POWERLEVEL9K_CONTEXT_BACKGROUND='#9A348E'
@@ -945,7 +946,7 @@
   # Context format when running with privileges: user@hostname.
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE='%n@%m'
   # Context format when in SSH without privileges: user@hostname.
-  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_TEMPLATE="\uEAD0 ${USER}@%m"
+  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_TEMPLATE="${USER}@%m"
   # Default context format (no privileges, no SSH): user@hostname.
   typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE='%n@%m'
 
@@ -961,7 +962,7 @@
   ###[ virtualenv: python virtual environment (https://docs.python.org/3/library/venv.html) ]###
   # Python virtual environment color.
   typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND="#FFFFFF"
-  typeset -g POWERLEVEL9K_VIRTUALENV_BACKGROUND="#CC3802"
+  typeset -g POWERLEVEL9K_VIRTUALENV_BACKGROUND="#047E84"
   # Don't show Python version next to the virtual environment name.
   typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=false
   # If set to "false", won't show virtualenv if pyenv is already shown.
@@ -1739,6 +1740,15 @@
   #               typed after changing current working directory.
   typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=off
 
+  # add: SSH status
+  function prompt_ssh() {
+    if [ -n "${REMOTEHOST}${SSH_CONNECTION}" ];then
+      p10k segment -b "#CC3802" -f "#FFFFFF" -t ''
+    fi
+  }
+  function instant_prompt_ssh(){
+    prompt_ssh
+  }
   # Instant prompt mode.
   #
   #   - off:     Disable instant prompt. Choose this if you've tried instant prompt and found
