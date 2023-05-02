@@ -488,6 +488,8 @@
   # Disable the default Git status formatting.
   typeset -g POWERLEVEL9K_VCS_DISABLE_GITSTATUS_FORMATTING=false
 
+  # Hint: https://github.com/romkatv/powerlevel10k/issues/1865#issuecomment-1125853266
+  typeset -g POWERLEVEL9K_VCS_{STAGED,UNSTAGED,UNTRACKED,CONFLICTED,COMMITS_AHEAD,COMMITS_BEHIND}_ICON=
   # Disable gitstatusd
   typeset -g POWERLEVEL9K_DISABLE_GITSTATUS=true
   # Change git status format color 
