@@ -92,7 +92,7 @@ ln:
 	$(call create_symlink,$(DOTFILES_NVIM_DIR),$(HOME_CONFIG_NVIM_DIR))
 	$(call create_symlink,$(DOTFILES_NVIM_CACHE_DATA_DIR),$(HOME_LOCAL_SHARE_NVIM_DIR))
 	$(call create_symlink,$(DOTFILES_NVIM_CACHE_STATE_DIR),$(HOME_LOCAL_STATE_NVIM_DIR))
-	$(call create_symlink)
+	$(call create_symlink,$(DOTFILES_TMUX_TMUX_CONF),$(HOME_TMUX_CONF))
 
 zsh: init
 	curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
