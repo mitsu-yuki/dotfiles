@@ -15,8 +15,9 @@ HOME := $(shell echo $$HOME)
 # |   |       |-- data              # DOTFILES_NVIM_CACHE_DATA_DIR
 # |   |       `-- state             # DOTFILES_NVIM_CACHE_STATE_DIR
 # |   `-- tmux                      # DOTFILES_TMUX_DIR
+# |       `-- .tmux.conf            # DOTFILES_TMUX_TMUX_CONF
 # |-- .config
-# |   |-- starship.toml # HOME_CONFIG_STARSHIP_TOML
+# |   |-- starship.toml             # HOME_CONFIG_STARSHIP_TOML
 # |   |-- (MAKE)nvim
 # |   |   `-- init.lua              # HOME_CONFIG_NVIM_INIT_LUA (symlink to ~/dotfiles/nvim/init.lua)
 # |   `-- (MAKE) sheldon
@@ -29,12 +30,14 @@ HOME := $(shell echo $$HOME)
 # |        `-- nvim                 # HOME_LOCAL_STATE_NVIM_DIR (symlink to ~/dotfiles/nvim/cache/state)
 # :
 # |-- .zshrc                        # HOME_ZSHRC (symlink to ~/dotfiles/zsh/.zshrc)
+# |-- .tmux.conf                    # HOME_TMUX_CONF
 # `-- (MAKE)bin                     # HOME_BIN_DIR (add symlink dir)
 
 # $HOME path
 DOTFILES_DIR                  := $(HOME)/dotfiles
 HOME_BIN_DIR                  := $(HOME)/bin
 HOME_ZSHRC                    := $(HOME)/.zshrc
+HOME_TMUX_CONF                := $(HOME)/.tmux.conf
 HOME_CONFIG_STARSHIP_TOML     := $(HOME)/.config/starship.toml
 HOME_CONFIG_SHELDON_TOML      := $(HOME)/.config/sheldon/plugins.toml
 HOME_CONFIG_NVIM_DIR          := $(HOME)/.config/nvim
@@ -47,6 +50,7 @@ HOME_LOCAL_SHARE_SHELDON_DIR  := $(HOME)/.local/share/sheldon
 DOTFILES_ZSH_DIR              := $(DOTFILES_DIR)/zsh
 DOTFILES_BIN_DIR              := $(DOTFILES_DIR)/bin
 DOTFILES_NVIM_DIR             := $(DOTFILES_DIR)/nvim
+DOTFILES_TMUX_DIR             := $(DOTFILES_DIR)/tmux
 
 # $HOME/dotfiles/zsh
 DOTFILES_ZSH_ZSHRC            := $(DOTFILES_ZSH_DIR)/.zshrc
@@ -59,6 +63,9 @@ DOTFILES_NVIM_CACHE_DIR       := $(DOTFILES_NVIM_DIR)/cache
 DOTFILES_NVIM_INIT_FILE       := $(DOTFILES_NVIM_DIR)/init.lua
 DOTFILES_NVIM_CACHE_DATA_DIR  := $(DOTFILES_NVIM_CACHE_DIR)/data
 DOTFILES_NVIM_CACHE_STATE_DIR := $(DOTFILES_NVIM_CACHE_DIR)/state
+
+# $HOME/dotfiles/tmux
+DOTFILES_TMUX_TMUX_CONF       := $(DOTFILES_TMUX_DIR)/.tmux.conf
 .PHONY: init starship
 
 .DEFAULT_GOAL := all
@@ -85,6 +92,7 @@ ln:
 	$(call create_symlink,$(DOTFILES_NVIM_DIR),$(HOME_CONFIG_NVIM_DIR))
 	$(call create_symlink,$(DOTFILES_NVIM_CACHE_DATA_DIR),$(HOME_LOCAL_SHARE_NVIM_DIR))
 	$(call create_symlink,$(DOTFILES_NVIM_CACHE_STATE_DIR),$(HOME_LOCAL_STATE_NVIM_DIR))
+	$(call create_symlink)
 
 zsh: init
 	curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
