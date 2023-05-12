@@ -3,7 +3,7 @@ case ${OS} in
   "Linux")
     alias ls='ls --color=auto';;
   "Darwin")
-    alias ls='ls -la';;
+    alias ls='ls --color';;
 esac
 alias ll='ls -la'
 alias rm='rm -i'
