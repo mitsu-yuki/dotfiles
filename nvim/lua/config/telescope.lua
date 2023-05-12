@@ -4,6 +4,7 @@ require('telescope').setup {
     mappings = {
       i = {
         ["<C-c>"] = {"<esc>", type = "command"},
+        ["<CR>"] = {"<esc>", type = "command"},
       },
       n = {
         ["<C-c>"] = require('telescope.actions').close,
