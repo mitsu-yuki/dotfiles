@@ -24,6 +24,9 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[Left]}"    ]]  && bindkey  "${key[Left]}"    backward-char
 [[ -n "${key[Right]}"   ]]  && bindkey  "${key[Right]}"   forward-char
 
+# <S-Tab>で補完候補を逆順で選ぶ
+bindkey '^[[Z' reverse-menu-complete
+
 function zle-line-init () {
     echoti smkx
 }
