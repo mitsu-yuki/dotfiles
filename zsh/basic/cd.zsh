@@ -1,5 +1,6 @@
 DIRSTACKSIZE=11
 setopt AUTO_PUSHD
+setopt PUSHED_IGNORE_DUPS
 setopt pushdminus
 
 autoload -Uz compinit && compinit
