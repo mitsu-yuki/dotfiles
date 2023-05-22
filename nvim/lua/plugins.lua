@@ -1,9 +1,5 @@
 vim.cmd('packadd packer.nvim')
 
-load_conf = function(name)
-  return require(string.format("config.%s", name))
-end
-
 require('packer').startup(function(use)
   use {'wbthomason/packer.nvim'}
   -- LSP
