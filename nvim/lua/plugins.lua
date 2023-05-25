@@ -206,4 +206,11 @@ require('packer').startup(function(use)
       require('config.todo-comments')
     end,
   }
+-- git conflictを解決するやつ
+  use {
+    "rhysd/conflict-marker.vim",
+    config = function()
+      require('config.conflict-marker')
+    end,
+  }
 end)
