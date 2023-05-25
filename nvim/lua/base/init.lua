@@ -11,7 +11,8 @@ vim.opt.expandtab = true
 -- swap dir
 vim.opt.directory = vim.fn.stdpath('data') .. '/tmp'
 vim.opt.backupdir = vim.fn.stdpath('data') .. '/tmp'
-vim.opt.viminfo = ''
+vim.opt.shada = "'50,<50,f1,:50,/50"
+vim.opt.shadafile = vim.fn.stdpath('state') .. '/shada/main.shada'
 
 -- mouse, clipboard
 vim.opt.mouse = 'a'
