@@ -211,6 +211,6 @@ require('packer').startup(function(use)
     "rhysd/conflict-marker.vim",
     config = function()
       require('config.conflict-marker')
-    end,
+    end
   }
 end)
