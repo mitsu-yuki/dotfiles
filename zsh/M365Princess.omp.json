@@ -6,6 +6,15 @@
       "newline": true,
       "segments": [
         {
+          "background": "#cc3802",
+          "foreground": "#ffffff",
+          "leading_diamond": "\ue0b6",
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
+          "type": "session",
+          "template": "{{ if .SSHSession }}\ueb01{{ end }}"
+        },
+        {
           "background": "#9A348E",
           "foreground": "#ffffff",
           "leading_diamond": "\ue0b6",
