@@ -1,26 +1,51 @@
 {
-  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "blocks": [
     {
       "alignment": "left",
       "newline": true,
       "segments": [
         {
+          "foreground_templates": [
+            "{{ if .Segments.Python }}#047e84{{ else if .Segments.ssh }}#cc3802{{ else }}#9A348E{{ end }}"
+          ],
+          "background_templates": [
+            "{{ if .Segments.Python }}#047e84{{ else if .Segments.ssh }}#cc3802{{ else }}#9A348E{{ end }}"
+          ],
+          "style": "diamond",
+          "type": "text",
+          "template": "<,transparent>\ue0b6"
+        },
+        {
+          "background": "#047e84",
+          "foreground": "#ffffff",
+          "style": "powerline",
+          "type": "python",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "fetch_version": false,
+            "display_mode": "always",
+            "fetch_virtual_env": true
+          },
+          "template": "{{ .Venv }} "
+        },
+        {
+          "alias": "ssh",
           "background": "#cc3802",
           "foreground": "#ffffff",
-          "leading_diamond": "\ue0b6",
           "powerline_symbol": "\ue0b0",
-          "style": "diamond",
+          "style": "powerline",
           "type": "session",
-          "template": "{{ if .SSHSession }}\ueb01{{ end }}"
+          "template": "{{ if .SSHSession }}{{ if .Segments.Python}} \ueb01 {{ else }}\ueb01 {{ end }}{{ end }}"
         },
         {
           "background": "#9A348E",
           "foreground": "#ffffff",
-          "leading_diamond": "\ue0b6",
+          "powerline_symbol": "\ue0b0",
           "style": "powerline",
-          "template": " {{ .UserName }}@{{ .HostName }} ",
-          "type": "session"
+          "type": "session",
+          "templates": [
+            "{{ if .Segments.Python }} {{ .UserName }}@{{ .HostName }} {{ else if .Segments.ssh }} {{ .UserName }}@{{ .HostName }} {{ else }}{{ .UserName }}@{{ .HostName }} {{ end }}"
+          ]
         },
         {
           "background": "#DA627D",
