@@ -11,41 +11,40 @@
           "background_templates": [
             "{{ if .Segments.Python }}#047e84{{ else if .Segments.ssh }}#cc3802{{ else }}#9A348E{{ end }}"
           ],
+          "leading_diamond": "\ue0b6",
           "style": "diamond",
           "type": "text",
-          "template": "<,transparent>\ue0b6"
+          "template": "\ufeff"
         },
         {
           "background": "#047e84",
           "foreground": "#ffffff",
-          "style": "powerline",
+          "style": "diamond",
           "type": "python",
-          "powerline_symbol": "\ue0b0",
+          "trailing_diamond": "\ue0b0",
           "properties": {
             "fetch_version": false,
             "display_mode": "always",
             "fetch_virtual_env": true
           },
-          "template": "{{ .Venv }} "
+          "template": " {{ .Venv }} "
         },
         {
           "alias": "ssh",
           "background": "#cc3802",
           "foreground": "#ffffff",
-          "powerline_symbol": "\ue0b0",
-          "style": "powerline",
+          "trailing_diamond": "\ue0b0",
+          "style": "diamond",
           "type": "session",
-          "template": "{{ if .SSHSession }}{{ if .Segments.Python}} \ueb01 {{ else }}\ueb01 {{ end }}{{ end }}"
+          "template": "{{ if .SSHSession }} \ueb01 {{ end }}"
         },
         {
           "background": "#9A348E",
           "foreground": "#ffffff",
           "powerline_symbol": "\ue0b0",
-          "style": "powerline",
+          "style": "diamond",
           "type": "session",
-          "templates": [
-            "{{ if .Segments.Python }} {{ .UserName }}@{{ .HostName }} {{ else if .Segments.ssh }} {{ .UserName }}@{{ .HostName }} {{ else }}{{ .UserName }}@{{ .HostName }} {{ end }}"
-          ]
+          "template": " {{ .UserName }}@{{ .HostName }} "
         },
         {
           "background": "#DA627D",
