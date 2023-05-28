@@ -5,9 +5,6 @@
       "newline": true,
       "segments": [
         {
-          "foreground_templates": [
-            "{{ if .Segments.Python }}#047e84{{ else if .Segments.ssh }}#cc3802{{ else }}#9A348E{{ end }}"
-          ],
           "background_templates": [
             "{{ if .Segments.Python }}#047e84{{ else if .Segments.ssh }}#cc3802{{ else }}#9A348E{{ end }}"
           ],
@@ -41,7 +38,6 @@
         {
           "background": "#9A348E",
           "foreground": "#ffffff",
-          "powerline_symbol": "\ue0b0",
           "style": "diamond",
           "type": "session",
           "template": " {{ .UserName }}@{{ .HostName }} "
@@ -62,7 +58,6 @@
           "foreground": "#ffffff",
           "powerline_symbol": "",
           "properties": {
-            "branch_icon": "",
             "fetch_stash_count": true,
             "fetch_status": true,
             "fetch_upstream_icon": true,
@@ -76,14 +71,6 @@
           "style": "powerline",
           "template": " \u279c ({{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }}) ",
           "type": "git"
-        },
-        {
-          "background": "#86BBD8",
-          "foreground": "#ffffff",
-          "powerline_symbol": "\ue0b0",
-          "style": "powerline",
-          "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
-          "type": "node"
         }
       ],
       "type": "prompt"
