@@ -62,14 +62,27 @@
             "fetch_status": true,
             "fetch_upstream_icon": true,
             "tag_icon": " ",
-            "branch_icon": " ",
-            "branch_identical_icon": "",
-            "branch_gone_icon": "",
-            "branch_ahead_icon": " ",
-            "branch_behind_icon": " "
+            "branch_icon": " "
           },
           "style": "powerline",
-          "template": " \u279c ({{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }}) ",
+          //   typeset -g POWERLEVEL9K_VCS_{STAGED,UNSTAGED,UNTRACKED,CONFLICTED,COMMITS_AHEAD,COMMITS_BEHIND}_MAX_NUM=-1
+          "templates": [
+            "{{ if .UpstreamIcon }} {{ .UpstreamIcon }}{{ else }}  {{ end }}",
+            " {{ .HEAD }} ",
+            "{{ if .Working.Changed }}",
+              "{{ if .Staging.Added }} {{ .Staging.Added }} {{ end }}",
+              "{{ if .Staging.Modified }} {{ .Staging.Modified }} {{ end }}",
+              "{{ if .Working.Modified }} {{ .Working.Modified }} {{ end }}",
+              "{{ if .Working.Untracked }} {{ .Working.Untracked }} {{ end }}",
+            "{{ end }}",
+            "{{ if .Ahead }} {{ .Ahead }} {{ end }}",
+            "{{ if .Behind }} {{ .Behind }} {{ end }}",
+            "{{ if and (.Working.Changed) (.Staging.Changed)}} |{{ end }}",
+            "{{ if .Staging.Changed}} {{ .Staging.String }}{{ end }}",
+            "{{ if gt .StashCount 0 }}  {{ .StashCount }}{{end}}"
+            //{{ if .Working.Changed }} ssssss {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} 
+            ],
+          "template": "{{ .Templates }}",
           "type": "git"
         }
       ],
