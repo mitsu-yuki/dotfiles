@@ -8,8 +8,6 @@ function prompt_full_cmd() {
     oh-my-posh print primary --config ~/dotfiles/zsh/M365Princess.omp.json
 }
 
-PROMPT='$(prompt_lite_cmd)' # single quotes to prevent immediate execution
-
 ASYNC_PROC=0
 function precmd() {
     function async() {
@@ -29,6 +27,10 @@ function precmd() {
     async &!
     ASYNC_PROC=$!
     [ -z $PRINT_NEW_LINE ] && PRINT_NEW_LINE=1 || echo ""
+}
+
+function chpwd() {
+  PROMPT='$(prompt_lite_cmd)'
 }
 
 function TRAPUSR1() {
