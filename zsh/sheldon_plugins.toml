@@ -8,11 +8,6 @@ defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
 github = "romkatv/zsh-defer"
 rev = "57a6650ff262f577278275ddf11139673e01e471"
 
-# powerline
-# [plugins.powerlevel10k]
-# github = "romkatv/powerlevel10k"
-# tag = "v1.17.0"
-
 # zsh-syntax-highlighting
 [plugins.zsh-syntax-highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
