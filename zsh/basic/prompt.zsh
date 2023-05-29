@@ -35,7 +35,7 @@ function TRAPUSR1() {
     # read from temp file
     PROMPT="$(cat /tmp/zsh_prompt_$$)"
     # remove the temp file
-    rm /tmp/zsh_prompt_$$
+    \rm /tmp/zsh_prompt_$$
 
     # reset proc number
     ASYNC_PROC=0
