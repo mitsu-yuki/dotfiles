@@ -1,0 +1,99 @@
+{
+  "blocks": [
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "background_templates": [
+            "{{ if .Segments.Python }}#047e84{{ else if .Segments.ssh }}#cc3802{{ else }}#9A348E{{ end }}"
+          ],
+          "leading_diamond": "",
+          "style": "diamond",
+          "type": "text",
+          "template": "\ufeff"
+        },
+        {
+          "background": "#047e84",
+          "foreground": "#ffffff",
+          "style": "diamond",
+          "type": "python",
+          "trailing_diamond": "",
+          "properties": {
+            "fetch_version": false,
+            "display_mode": "always",
+            "fetch_virtual_env": true
+          },
+          "template": " {{ .Venv }} "
+        },
+        {
+          "alias": "ssh",
+          "background": "#cc3802",
+          "foreground": "#ffffff",
+          "trailing_diamond": "",
+          "style": "diamond",
+          "type": "session",
+          "template": "{{ if .SSHSession }}  {{ end }}"
+        },
+        {
+          "background": "#9A348E",
+          "foreground": "#ffffff",
+          "style": "diamond",
+          "type": "session",
+          "template": " {{ .UserName }}@{{ .HostName }} "
+        },
+        {
+          "background": "#DA627D",
+          "foreground": "#ffffff",
+          "powerline_symbol": "",
+          "properties": {
+            "style": "full"
+          },
+          "style": "powerline",
+          "template": " {{ .Path }} ",
+          "type": "path"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments" : [
+        {
+          "background": "#33658A",
+          "foreground": "#ffffff",
+          "leading_diamond": "",
+          "properties": {
+            "time_format": "15:04:05"
+          },
+          "style": "diamond",
+          "template": " {{ .CurrentDate | date .Format }}  ",
+          "trailing_diamond": "",
+          "type": "time"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#5fd700",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#ff0000{{ end }}"
+          ],
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": "❯",
+          "type": "exit"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 2
+}
