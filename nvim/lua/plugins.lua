@@ -110,7 +110,7 @@ require('packer').startup(function(use)
     },
     config = function()
       require('config.indent-blankline')
-    end
+    end,
   }
   -- print function name on cursole
   use {
@@ -209,5 +209,12 @@ require('packer').startup(function(use)
     config = function()
       require('config.todo-comments')
     end,
+  }
+-- 自動インデント検出
+  use {
+    'Darazaki/indent-o-matic',
+    config = function ()
+      require('config.indent-o-matic')
+    end
   }
 end)
