@@ -35,3 +35,7 @@ vim.api.nvim_create_autocmd({"TermOpen"},{
   pattern = {"*"},
   command = "setlocal nonumber norelativenumber"
 })
+
+-- file encoding
+vim.opt.encoding = "utf-8"
+vim.opt.fileencodings = "iso-2022-jp,euc-jp,sjis,utf-8"
