@@ -1,5 +1,2 @@
-vim.api.nvim_set_hl(0, "ConflictMarkerBegin", { bg = "#2f7366" })
-vim.api.nvim_set_hl(0, "ConflictMarkerOurs", { bg = "#2e5049" })
-vim.api.nvim_set_hl(0, "ConflictMarkerTheirs", { bg = "#344f69" })
-vim.api.nvim_set_hl(0, "ConflictMarkerEnd", { bg = "#2f628e" })
-vim.api.nvim_set_hl(0, "ConflictMarkerCommonAncestorsHunk", { bg = "#754a81" })
+vim.cmd("highlight ConflictMarkerOurs guibg=#2e5049")
+vim.cmd("highlight ConflictMarkerTheirs guibg=#344f69")

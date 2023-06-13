@@ -1,9 +1,5 @@
 vim.cmd('packadd packer.nvim')
 
-load_conf = function(name)
-  return require(string.format("config.%s", name))
-end
-
 require('packer').startup(function(use)
   use {'wbthomason/packer.nvim'}
   -- LSP
@@ -215,6 +211,13 @@ require('packer').startup(function(use)
     'Darazaki/indent-o-matic',
     config = function ()
       require('config.indent-o-matic')
+    end
+  }
+-- git conflictを解決するやつ
+  use {
+    "rhysd/conflict-marker.vim",
+    config = function()
+      require('config.conflict-marker')
     end
   }
 end)
