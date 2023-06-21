@@ -13,10 +13,15 @@ require('packer').startup(function(use)
   use {'williamboman/mason-lspconfig.nvim'}
 
   use {
-    'jose-elias-alvarez/null-ls.nvim',
+    "jay-babu/mason-null-ls.nvim",
+    requires = {
+      'jose-elias-alvarez/null-ls.nvim',
+      'williamboman/mason.nvim',
+    },
     config = function()
       require('config.null-ls')
     end,
+    wants = { 'mason.nvim' }
   }
 
   -- 補完
