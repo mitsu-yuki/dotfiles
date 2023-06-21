@@ -40,7 +40,7 @@
           "foreground": "#ffffff",
           "style": "diamond",
           "type": "session",
-          "template": " {{ .UserName }}@{{ .HostName }} "
+          "template": " {{ .UserName }}@{{ trunc 10 .HostName }} "
         },
         {
           "background": "#DA627D",
