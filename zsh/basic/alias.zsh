@@ -14,3 +14,7 @@ alias grep='grep --color=auto'
 if [ -n "$(which nvim)" ];then
   alias vim='nvim'
 fi
+
+function rgless(){
+  rg -p "$@" | less -R
+}
