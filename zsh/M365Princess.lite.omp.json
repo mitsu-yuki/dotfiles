@@ -5,53 +5,46 @@
       "newline": true,
       "segments": [
         {
-          "background_templates": [
-            "{{ if .Segments.Python }}#047e84{{ else if .Segments.ssh }}#cc3802{{ else }}#9A348E{{ end }}"
-          ],
+          "background": "#B33DA5",
+          "foreground": "#ffffff",
           "leading_diamond": "",
           "style": "diamond",
-          "type": "text",
-          "template": "\ufeff"
+          "type": "session",
+          "template": " {{ .UserName }}@{{ trunc 10 .HostName }} "
         },
         {
-          "background": "#047e84",
+          "background": "#da627d",
           "foreground": "#ffffff",
-          "style": "diamond",
+          "powerline_symbol": "",
+          "properties": {
+            "style": "full",
+            "max_width": 50
+          },
+          "style": "powerline",
+          "template": " {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "alias": "ssh",
+          "background": "#db8957",
+          "foreground": "#ffffff",
+          "powerline_symbol": "",
+          "style": "powerline",
+          "type": "session",
+          "template": "{{ if .SSHSession }}  {{ end }}"
+        },
+        {
+          "background": "#ffab15",
+          "foreground": "#ffffff",
+          "style": "powerline",
           "type": "python",
-          "trailing_diamond": "",
+          "powerline_symbol": "",
           "properties": {
             "fetch_version": false,
             "display_mode": "always",
             "fetch_virtual_env": true
           },
           "template": " {{ .Venv }} "
-        },
-        {
-          "alias": "ssh",
-          "background": "#cc3802",
-          "foreground": "#ffffff",
-          "trailing_diamond": "",
-          "style": "diamond",
-          "type": "session",
-          "template": "{{ if .SSHSession }}  {{ end }}"
-        },
-        {
-          "background": "#9A348E",
-          "foreground": "#ffffff",
-          "style": "diamond",
-          "type": "session",
-          "template": " {{ .UserName }}@{{ trunc 10 .HostName }} "
-        },
-        {
-          "background": "#DA627D",
-          "foreground": "#ffffff",
-          "powerline_symbol": "",
-          "properties": {
-            "style": "full"
-          },
-          "style": "powerline",
-          "template": " {{ .Path }} ",
-          "type": "path"
         }
       ],
       "type": "prompt"
