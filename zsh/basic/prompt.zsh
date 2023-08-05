@@ -10,6 +10,10 @@ function prompt_full_cmd() {
 
 PROMPT='$(prompt_lite_cmd)'
 ASYNC_PROC=0
+function chpwd() {
+    PROMPT='$(prompt_lite_cmd)'
+}
+
 function precmd() {
   function async() {
     # save to temp file
