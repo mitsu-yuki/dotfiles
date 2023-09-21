@@ -49,3 +49,6 @@ export LANG=en_US.UTF-8  # 文字コードをUTF-8に設定
 export KCODE=u           # KCODEにUTF-8を設定
 export AUTOFEATURE=true  # autotestでfeatureを動かす
 
+# Alt + 矢印で単語単位移動
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
