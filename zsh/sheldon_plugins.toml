@@ -35,3 +35,7 @@ tag = "0.34.0"
 [plugins.dotfiles]
 local = "~/dotfiles/zsh/basic"
 apply = ["source"]
+
+# user completion
+local = "~dotfiles/zsh/completion"
+apply = ["source"]
