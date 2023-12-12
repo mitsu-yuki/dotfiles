@@ -38,7 +38,7 @@ apply = ["source"]
 
 # user completion
 [plugins.completion]
-local = "~/dotfiles/zsh/completion"
+local = "~/dotfiles/zsh/completions"
 apply = ["source", "fpath"]
 
 [plugins.compinit]
