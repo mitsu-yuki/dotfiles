@@ -1,3 +1,5 @@
+-- ref: https://github.com/yuucu/dotfiles/blob/79adcdebf7bc36b7cb6e14c2bbcf157ebb12a54f/config/nvim/lua/lazyvim.lua
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -10,3 +12,16 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
+
+local opts = {
+  defaults = {
+    lazy = true,
+  },
+  performance = {
+    cache = {
+      enabled = true,
+    },
+  },
+}
+
+require("lazy").setup("plugins", opts)
