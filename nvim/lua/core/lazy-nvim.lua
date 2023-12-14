@@ -21,6 +21,19 @@ local opts = {
     cache = {
       enabled = true,
     },
+    disabled_plugins = {
+      "gzip",
+      "matchit",
+      "matchparen",
+      "netrwPlugin",
+      "tarPlugin",
+      "tohtml",
+      "tutor",
+      "zipPlugin",
+    },
+  },
+  ui = {
+    border = "single",
   },
 }
 
