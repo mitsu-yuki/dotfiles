@@ -3,13 +3,14 @@ return {
     "navarasu/onedark.nvim",
     event = "VimEnter",
     name = "onedark.vim",
-    opt = {
+    opts = {
       style = "darker",
       code_style = {
         comments = "none",
       },
     },
-    config = function()
+    config = function(_, opts)
+      require("onedark").setup(opts)
       vim.cmd.colorscheme "onedark"
       vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none"} )
     end,
