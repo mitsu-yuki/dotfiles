@@ -5,7 +5,6 @@ return {
   cmd = {
     "Telescope"
   },
-  event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "nvim-lua/plenary.nvim",
     {
