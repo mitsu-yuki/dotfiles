@@ -41,12 +41,13 @@ return {
   cmd = {
     "NvimTreeToggle",
     "NvimTreeOpen",
-		"NvimTreeFindFile",
-		"NvimTreeFindFileToggle",
-		"NvimTreeRefresh",
+    "NvimTreeFindFile",
+    "NvimTreeFindFileToggle",
+    "NvimTreeRefresh",
   },
   opts = {
     auto_reload_on_write = true,
+    hijack_netrw = true,
     renderer = {
       indent_markers = {
         enable = true,
