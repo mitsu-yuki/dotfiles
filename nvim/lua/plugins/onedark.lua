@@ -2,7 +2,7 @@ return {
   {
     "navarasu/onedark.nvim",
     event = "VimEnter",
-    name = "onedark.vim",
+    name = "onedark",
     opts = {
       style = "darker",
       code_style = {
