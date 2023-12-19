@@ -1,18 +1,18 @@
 return {
-  {
-    "navarasu/onedark.nvim",
-    event = "VimEnter",
-    name = "onedark",
-    opts = {
-      style = "darker",
-      code_style = {
-        comments = "none",
-      },
+  "navarasu/onedark.nvim",
+  event = "VimEnter",
+  opts = {
+    style = "darker",
+    transparent = true,
+    code_style = {
+      comments = "none",
     },
-    config = function(_, opts)
-      require("onedark").setup(opts)
-      vim.cmd.colorscheme "onedark"
-      vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none"} )
-    end,
-  }
+    highlights = {
+      FloatBorder = {bg = "none"}
+    },
+  },
+  config = function(_, opts)
+    require("onedark").setup(opts)
+    vim.cmd.colorscheme "onedark"
+  end,
 }
