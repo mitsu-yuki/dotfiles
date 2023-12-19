@@ -37,7 +37,6 @@ return {
   name = "nvim-tree",
   lazy = false,
   commit = "141c0f97c35f274031294267808ada59bb5fb08e",
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
   cmd = {
     "NvimTreeToggle",
     "NvimTreeOpen",
