@@ -3,7 +3,6 @@ return {
   dependencies = {
     {
       "williamboman/mason.nvim",
-      name = "mason",
       cmd = {
         "Mason",
         "MasonUpdate",
