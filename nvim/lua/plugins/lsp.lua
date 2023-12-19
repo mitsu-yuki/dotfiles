@@ -22,5 +22,10 @@ return {
   config = function()
     local mason = require("mason")
     local mason_lsp = require("mason-lspconfig")
+    mason_lsp.setup_handlers {
+      function(server)
+        require("lspconfig")[server].setup {}
+      end
+    }
   end
 }
