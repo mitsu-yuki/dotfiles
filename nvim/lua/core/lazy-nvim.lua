@@ -13,6 +13,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+
 local opts = {
   defaults = {
     lazy = true,
@@ -21,15 +22,19 @@ local opts = {
     cache = {
       enabled = true,
     },
-    disabled_plugins = {
-      "gzip",
-      "matchit",
-      "matchparen",
-      "netrwPlugin",
-      "tarPlugin",
-      "tohtml",
-      "tutor",
-      "zipPlugin",
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "man",
+        "rplugin",
+        "matchit",
+        "matchparen",
+        "netrwPlugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
     },
   },
   ui = {
