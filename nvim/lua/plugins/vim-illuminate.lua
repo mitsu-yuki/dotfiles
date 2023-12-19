@@ -2,7 +2,7 @@ return {
   "RRethy/vim-illuminate",
   event = "VeryLazy",
   opts = {
-    delay = 100
+    delay = 200
   },
   config = function(_, opts)
     require("illuminate").configure(opts)
