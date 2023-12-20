@@ -17,6 +17,7 @@ return {
     },
     messages = {
       enable = true,
+      view_search = false
     }
   },
 }
