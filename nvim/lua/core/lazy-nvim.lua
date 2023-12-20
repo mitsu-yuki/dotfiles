@@ -28,7 +28,6 @@ local opts = {
         "man",
         "rplugin",
         "matchit",
-        "matchparen",
         "netrwPlugin",
         "tarPlugin",
         "tohtml",
