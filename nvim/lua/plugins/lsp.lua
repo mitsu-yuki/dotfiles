@@ -1,31 +1,46 @@
 return {
-  "williamboman/mason-lspconfig.nvim",
-  dependencies = {
-    {
+  {
+    "neovim/nvim-lspconfig",
+    event = "VeryLazy",
+    dependencies = {
       "williamboman/mason.nvim",
-      cmd = {
-        "Mason",
-        "MasonUpdate",
-        "MasonInstall",
-        "MasonUninstall",
-        "MasonUninstallAll",
-        "MasonLog"
-      },
-      opts = {
-        ui = {
-          border = "rounded"
-        }
-      }
+      "williamboman/mason-lspconfig"
     },
-    {"neovim/nvim-lspconfig"},
+    opts = {},
+    config = function()
+      local mason_lsp = require("mason-lspconfig")
+      mason_lsp.setup_handlers {
+        function(server)
+          local opts = {
+            capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+          },
+          require("lspconfig")[server].setup(opts)
+        end
+      }
+    end
   },
-  config = function()
-    local mason = require("mason")
-    local mason_lsp = require("mason-lspconfig")
-    mason_lsp.setup_handlers {
-      function(server)
-        require("lspconfig")[server].setup {}
-      end
+  {
+    "williamboman/mason.nvim",
+    build = ":MasonUpdate",
+    cmd = {
+      "Mason",
+      "MasonUpdate",
+      "MasonInstall",
+      "MasonUninstall",
+      "MasonUninstallAll",
+      "MasonLog"
+    },
+    opts = {
+      ui = {
+        border = "rounded"
+      }
     }
-  end
+  },
+  {
+    "williamboman/mason-lspconfig",
+    dependencies = {
+      "williamboman/mason.nvim"
+    },
+    opts = {}
+  }
 }
