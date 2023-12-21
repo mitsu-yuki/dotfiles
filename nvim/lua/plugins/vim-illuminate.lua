@@ -1,6 +1,6 @@
 return {
   "RRethy/vim-illuminate",
-  event = "VeryLazy",
+  event = {"CursorHold", "CursorHoldI"},
   opts = {
     delay = 500
   },

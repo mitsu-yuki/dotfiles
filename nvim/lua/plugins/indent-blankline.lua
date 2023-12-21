@@ -1,6 +1,6 @@
 return {
   "lukas-reineke/indent-blankline.nvim",
-  event = "VeryLazy",
+  event = {"CursorHold", "CursorHoldI"},
   tag = "v2.20.8",
   dependencies = { 'nvim-treesitter/nvim-treesitter' },
   config = function()
