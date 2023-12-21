@@ -34,7 +34,6 @@ end
 
 return {
   "nvim-tree/nvim-tree.lua",
-  name = "nvim-tree",
   lazy = false,
   commit = "141c0f97c35f274031294267808ada59bb5fb08e",
   cmd = {
