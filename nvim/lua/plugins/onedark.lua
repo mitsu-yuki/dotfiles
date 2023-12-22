@@ -1,8 +1,7 @@
 return {
   {
     "navarasu/onedark.nvim",
-    event = "VimEnter",
-    cond = 1000,
+    lazy = false,
     opts = {
       style = "darker",
       transparent = true,
