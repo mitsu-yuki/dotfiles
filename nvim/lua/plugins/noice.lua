@@ -1,6 +1,6 @@
 return {
   "folke/noice.nvim",
-  event = {"CursorHold", "CursorHoldI"},
+  event = "VeryLazy",
   dependencies = {
     "MunifTanjim/nui.nvim",
     {
