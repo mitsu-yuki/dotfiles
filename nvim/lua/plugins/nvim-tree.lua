@@ -77,7 +77,7 @@ return {
       enable = false,
     },
   },
-  config = function(data)
+  config = function(_, opts)
     require("nvim-tree").setup(opts)
     vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
     vim.api.nvim_create_autocmd({ "QuitPre" }, { callback = close_nvim_tree })
