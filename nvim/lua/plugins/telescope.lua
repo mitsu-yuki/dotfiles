@@ -18,11 +18,10 @@ return {
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
-    local builtin = require("telescope.builtin")
-    local extensions = require('telescope').extensions
     telescope.setup({
       defaults = {
-        sorting_strategy = 'ascending',
+        sorting_strategy = "ascending",
+        scroll_strategy = "limit",
         mappings = {
           i = {
             ["<C-c>"] = {"<esc>", type = "command"},
@@ -34,11 +33,14 @@ return {
           },
         },
       },
+      pickers = {
+        buffers = {
+          initial_mode = "normal"
+        },
+        notify = {
+          initial_mode = "normal"
+        }
+      }
     })
-    -- keymapings
-    vim.keymap.set('n', '<C-T>f', builtin.find_files, {})
-    vim.keymap.set('n', '<C-T>g', builtin.live_grep, {})
-    vim.keymap.set('n', '<C-T>b', builtin.buffers, {})
-    vim.keymap.set('n', '<C-T>F', extensions.frecency.frecency, {})
   end,
 }
