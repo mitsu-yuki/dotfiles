@@ -34,7 +34,6 @@ end
 
 return {
   "nvim-tree/nvim-tree.lua",
-  lazy = false,
   commit = "141c0f97c35f274031294267808ada59bb5fb08e",
   cmd = {
     "NvimTreeToggle",
@@ -79,7 +78,7 @@ return {
   },
   config = function(_, opts)
     require("nvim-tree").setup(opts)
-    vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+    -- vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
     vim.api.nvim_create_autocmd({ "QuitPre" }, { callback = close_nvim_tree })
   end,
 }
