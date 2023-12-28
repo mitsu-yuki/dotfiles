@@ -39,6 +39,9 @@ return {
         },
         notify = {
           initial_mode = "normal"
+        },
+        find_files = {
+          initial_mode = "normal"
         }
       }
     })
