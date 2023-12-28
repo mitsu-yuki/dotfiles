@@ -3,11 +3,18 @@ return {
   "kevinhwang91/nvim-hlslens",
   event = { "BufReadPost", "BufAdd", "BufNewFile" },
   dependencies = {"petertriho/nvim-scrollbar"},
-  config = function()
+  opts = {
+    auto_enable = {
+      default = false
+    }
+  },
+  config = function(_, opts)
     -- require('hlslens').setup() is not required
     require("scrollbar.handlers.search").setup({
         -- hlslens config overrides
       override_lens = function () end,
     })
+
+    require("hlslens").setup(opts)
   end,
 }
