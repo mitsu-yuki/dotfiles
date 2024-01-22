@@ -1,2 +1,3 @@
-require('base')
-require("plugins")
+require("core/options")
+require("core/lazy-nvim")
+require("core/keymaps")

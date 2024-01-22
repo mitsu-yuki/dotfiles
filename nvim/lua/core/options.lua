@@ -39,3 +39,6 @@ vim.api.nvim_create_autocmd({"TermOpen"},{
 
 -- file encoding
 vim.opt.fileencodings = "utf-8,iso-2022-jp,euc-jp,sjis"
+
+-- CursorHold time
+vim.opt.updatetime = 200
