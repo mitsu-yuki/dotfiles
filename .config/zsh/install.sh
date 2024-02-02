@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 DOTFILES="${HOME}/dotfiles"
-DOTFILES_ZSH="${DOTILFES}/.config/zsh"
+DOTFILES_ZSH="${DOTFILES}/.config/zsh"
 if [ ! -f "${DOTFILES_ZSH}/.zshenv" ];then
   cat << EOF > "${DOTFILES_ZSH}/.zshenv"
 export ZDOTDIR='${DOTFILES_ZSH}'
