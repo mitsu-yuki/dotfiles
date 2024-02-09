@@ -42,7 +42,3 @@ apply = ["fpath"]
 
 [plugins.compinit]
 inline = 'autoload -Uz compinit && compinit'
-
-[plugins.aqua-env]
-local = "~/dotfiles/.config/aquaproj-aqua"
-apply = ["source"]
