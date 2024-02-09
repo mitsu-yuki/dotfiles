@@ -10,5 +10,6 @@ export ZDOTDIR='${DOTFILES_ZSH}'
 export XDG_CONFIG_HOME='${DOTFILES}/.config'
 export XDG_DATA_HOME='${DOTFILES}/.local/share'
 EOF
-  cat "${XDG_ENV}" "${HOME}/.zshenv" > "${HOME}/.zshenv"
+  mv "${HOME}/.zshenv" "${HOME}/zshenv.bak"
+  cat "${XDG_ENV}" "/tmp/zshenv" > "${HOME}/.zshenv"
 fi
