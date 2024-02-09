@@ -28,7 +28,7 @@ github = "zsh-users/zsh-completions"
 
 # user settings
 [plugins.dotfiles]
-local = "~/dotfiles/zsh/basic"
+local = "~/dotfiles/.config/zsh/basic"
 apply = ["source"]
 
 # user completion
