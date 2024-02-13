@@ -1,7 +1,7 @@
 setopt prompt_subst # enable command substition in prompt
 
 function prompt_lite_cmd() {
-    oh-my-posh print primary --config "${XDG_CONFIG_HOME}/oh-my-posh/365Princess.lite.omp.json"
+    oh-my-posh print primary --config "${XDG_CONFIG_HOME}/oh-my-posh/M365Princess.lite.omp.json"
 }
 
 function prompt_full_cmd() {
