@@ -5,6 +5,6 @@ export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.conf
 typeset -U path PATH
 
 # load managed sheldon plugins
-if which sheldon;then
+if which sheldon > /dev/null 2>&1 ;then
   eval "$(sheldon source)"
 fi

@@ -18,6 +18,6 @@ curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.3.0/aqua
 
 # setup cli from aqua
 source "${DOTFILES}/.config/zsh/.zshrc"
-if which aqua; then
+if which aqua > /dev/null 2>&1 ; then
   aqua install -a
 fi
