@@ -3,7 +3,7 @@
 DOTFILES="${HOME}/dotfiles"
 DOTFILES_ZSH="${DOTFILES}/.config/zsh"
 XDG_ENV="${DOTFILES_ZSH}/xdg_env"
-if [ ! -f "${XDG_ENV}" ];then
+if [ -z "${ZDOTDIR}" ];then
   touch "${XDG_ENV}"
   cat << EOF > "${XDG_ENV}"
 export ZDOTDIR='${DOTFILES_ZSH}'
@@ -12,8 +12,9 @@ export XDG_DATA_HOME='${DOTFILES}/.local/share'
 EOF
   if [ -f "${HOME}/.zshenv" ];then
     mv "${HOME}/.zshenv" "${HOME}/zshenv.bak"
-    cat "${XDG_ENV}" "/tmp/zshenv" > "${HOME}/.zshenv"
+    cat "${XDG_ENV}" "${HOME}/zshenv.bak" > "${HOME}/.zshenv"
   else
     cp "${XDG_ENV}" "${HOME}/.zshenv"
   fi
+  rm "${XDG_ENV}"
 fi
