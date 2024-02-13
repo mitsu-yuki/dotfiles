@@ -7,7 +7,7 @@ DOTFILES=$(dirname $0)
 printf "Setup zsh env (XDG_BASE_DIRECTORY)"
 if "${DOTFILES}"/.config/zsh/install.sh ;then
   echo SUCCESS
-  source "${DOTFILES}/.config/zsh/xdg_env"
+  source "${HOME}/.zshenv"
 else
   failed
   return 0
