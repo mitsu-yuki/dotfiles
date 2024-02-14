@@ -42,6 +42,9 @@ return {
         },
         find_files = {
           initial_mode = "normal"
+        },
+        grep_string = {
+          initial_mode = "normal"
         }
       }
     })
