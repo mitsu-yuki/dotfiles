@@ -6,40 +6,39 @@ defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
 # lazy load plugin
 [plugins.zsh-defer]
 github = "romkatv/zsh-defer"
-rev = "57a6650ff262f577278275ddf11139673e01e471"
 
-# zsh-syntax-highlighting
+ zsh-syntax-highlighting
 [plugins.zsh-syntax-highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
-tag = "0.7.1"
 apply = ["defer"]
 
 # autosuggestions
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
-tag = "v0.7.0"
 apply = ["defer"]
 
 # history search
 [plugins.zsh-history-substring-search]
 github = "zsh-users/zsh-history-substring-search"
-rev = "400e58a87f72ecec14f783fbd29bc6be4ff1641c"
 apply = ["defer"]
 
 # add completion
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
-tag = "0.34.0"
 
 # user settings
 [plugins.dotfiles]
-local = "~/dotfiles/zsh/basic"
+local = "~/dotfiles/.config/zsh/basic"
 apply = ["source"]
 
 # user completion
-[plugins.completion]
-local = "~/dotfiles/zsh/completions"
-apply = ["source", "fpath"]
+[plugins.completion-restic]
+remote = "https://github.com/restic/restic/blob/master/doc/zsh-completion.zsh"
+apply = ["fpath"]
+
+[plugins.completion-fd]
+remote = "https://github.com/sharkdp/fd/blob/master/contrib/completion/_fd"
+apply = ["fpath"]
 
 [plugins.compinit]
 inline = 'autoload -Uz compinit && compinit'
