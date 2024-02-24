@@ -1,6 +1,0 @@
-[ghq]
-	root = /src/git
-[core]
-	editor = nvim
-[include]
-	path = /Users/chitose/.gitconfig
