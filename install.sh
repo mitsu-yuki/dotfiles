@@ -39,5 +39,6 @@ else
   cp "${NVM_ENV}" "${HOME}/.zshenv"
 fi
 rm "${NVM_ENV}"
+source "${HOME}/.zshenv"
 . "${NVM_DIR}/nvm.sh"
 nvm install --lts
