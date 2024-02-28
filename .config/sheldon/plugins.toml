@@ -2,6 +2,7 @@ shell = "zsh"
 
 [templates]
 defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
+none = ""
 
 # lazy load plugin
 [plugins.zsh-defer]
@@ -42,3 +43,8 @@ apply = ["fpath"]
 
 [plugins.compinit]
 inline = 'autoload -Uz compinit && compinit'
+
+[plugins.oh-my-posh]
+github = "JanDeDobbeleer/oh-my-posh"
+apply = ["none"]
+
