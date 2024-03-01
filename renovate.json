@@ -1,6 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "timezone": "Asia/Tokyo",
   "extends": [
-    "config:recommended"
+    "config:recommended",
+    "github>aquaproj/aqua-renovate-config#1.13.0",
+    "github>aquaproj/aqua-renovate-config:installer-script#1.13.0(*\\.sh)"
+  ],
+  "automergeSchedule": [
+    "before 4am on Monday"
   ]
 }
