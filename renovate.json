@@ -4,7 +4,7 @@
   "extends": [
     "config:recommended",
     "github>aquaproj/aqua-renovate-config#1.13.0",
-    "github>aquaproj/aqua-renovate-config:installer-script#1.13.0(*\\.sh)"
+    "github>aquaproj/aqua-renovate-config:installer-script#1.13.0(install.sh)"
   ],
   "automergeSchedule": [
     "before 4am on Monday"
