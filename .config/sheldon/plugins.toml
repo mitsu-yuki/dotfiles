@@ -13,6 +13,10 @@ github = "romkatv/zsh-defer"
 github = "zsh-users/zsh-syntax-highlighting"
 apply = ["defer"]
 
+# cutppuccin for zsh-syntax-highlighting
+[plugins.catppuccin-zsh-syntax-highlighting]
+remote = "https://raw.githubusercontent.com/catppuccin/zsh-syntax-highlighting/main/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh"
+
 # autosuggestions
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
