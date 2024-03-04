@@ -9,12 +9,8 @@ none = ""
 github = "romkatv/zsh-defer"
 
 # zsh-syntax-highlighting
-# [plugins.zsh-syntax-highlighting]
-# github = "zsh-users/zsh-syntax-highlighting"
-# apply = ["defer"]
-
-[plugins.zsh-fast-syntax-highlighting]
-github = "zdharma-continuum/fast-syntax-highlighting"
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
 apply = ["defer"]
 
 # autosuggestions
