@@ -1,4 +1,4 @@
-#!/use/bin/zsh
+#!/usr/bin/env zsh
 
 GHQ_ROOT="${HOME}/work/git"
 # add ghq config
