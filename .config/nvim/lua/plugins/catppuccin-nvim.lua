@@ -5,6 +5,14 @@ return {
   opts = {
     flavour = "mocha",
     transparent_background = true,
+    integrations = {
+      mason = true,
+      noice = true,
+      telescope = {
+        enabled = true
+      },
+      lsp_trouble = true,
+    }
   },
   config = function(_,opts)
     require("catppuccin").setup(opts)

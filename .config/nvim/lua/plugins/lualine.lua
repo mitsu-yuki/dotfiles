@@ -10,6 +10,9 @@ return {
           path = 1,
         }
       }
+    },
+    options = {
+      theme = "catppuccin"
     }
   }
 }
