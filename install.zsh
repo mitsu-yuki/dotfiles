@@ -2,10 +2,11 @@
 
 # dotfiles variables
 INSTALL_DIR=$(dirname $0)/install
-
+apps=("zsh" "aqua" "nvm" "tmux" "ghq")
 run_install_script()
 {
   local app="${1}"
+  printf "Setup %s\n" "${app}"
   if "${INSTALL_DIR}/${app}.zsh" ;then
     echo "SUCCESS"
     source "${HOME}/.zshenv"
@@ -15,7 +16,8 @@ run_install_script()
   fi
 }
 
-run_install_script zsh
-run_install_script aqua
-run_install_script nvm
-run_install_script tmux
+for app in "${apps[@]}"
+do
+  run_install_script "${app}"
+done
+
