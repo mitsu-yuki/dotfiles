@@ -2,6 +2,7 @@ shell = "zsh"
 
 [templates]
 defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
+none = ""
 
 # lazy load plugin
 [plugins.zsh-defer]
@@ -11,6 +12,10 @@ github = "romkatv/zsh-defer"
 [plugins.zsh-syntax-highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
 apply = ["defer"]
+
+# cutppuccin for zsh-syntax-highlighting
+[plugins.catppuccin-zsh-syntax-highlighting]
+remote = "https://raw.githubusercontent.com/catppuccin/zsh-syntax-highlighting/main/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh"
 
 # autosuggestions
 [plugins.zsh-autosuggestions]
@@ -42,3 +47,8 @@ apply = ["fpath"]
 
 [plugins.compinit]
 inline = 'autoload -Uz compinit && compinit'
+
+[plugins.oh-my-posh]
+github = "JanDeDobbeleer/oh-my-posh"
+apply = ["none"]
+
