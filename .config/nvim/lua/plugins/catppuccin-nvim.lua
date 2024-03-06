@@ -11,12 +11,16 @@ return {
       telescope = {
         enabled = true
       },
+      illuminate = {
+        enabled = true,
+        lsp = false,
+      },
       lsp_trouble = true,
     }
   },
   config = function(_,opts)
     require("catppuccin").setup(opts)
-    vim.cmd.colorscheme "catppuccin"
+    vim.cmd.colorscheme("catppuccin")
   end
 }
 
