@@ -2,7 +2,7 @@
 
 # dotfiles variables
 INSTALL_DIR=$(dirname $0)/install
-apps=("zsh" "aqua" "nvm" "tmux" "ghq")
+apps=("zsh" "nvm" "tmux" "ghq")
 run_install_script()
 {
   local app="${1}"
