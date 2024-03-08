@@ -20,6 +20,10 @@ EOF
     cp "${XDG_ENV}" "${HOME}/.zshenv"
   fi
   rm "${XDG_ENV}"
+  printf "XDG_BASE_DIRECTORY setup is success!\n"
 else
   echo "XDG_BASE_DIRECTORY is already setup"
 fi
+
+printf "create symlink %s to %s" "${HOME}/.zshenv" "${DOTFILES_ZSH}/.zshenv"
+ln -sf "${HOME}/.zshenv" "${DOTFILES_ZSH}/.zshenv"
