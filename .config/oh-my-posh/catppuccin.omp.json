@@ -1,18 +1,27 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "palette": {
+        // mocha palette
         "os": "#ACB0BE",
-        "pink": "#F5BDE6",
+        "rosewater": "#F5E0DC",
+        "flamingo": "#F2CDCD",
+        "pink": "#F5C2E7",
+        "mauve": "#CBA6F7",
         "red": "#F38BA8",
-        "lavender": "#B7BDF8",
+        "maroon": "#EBA0AC",
+        "peach": "#FAB387",
+        "green": "#A6E3A1",
         "teal": "#94E2D5",
-        "blue":  "#8AADF4",
-        "wight": "#FFFFFF",
-        "text": "#494D64"
+        "sky": "#89DCEB",
+        "sapphire": "#74C7EC",
+        "blue": "#89B4FA",
+        "lavender": "#B4BEFE",
+        "text": "#45475A" // Surface 0
   },
   "blocks": [
     {
       "alignment": "left",
+      "newline": true,
       "segments": [
         {
           "background": "p:blue",
@@ -36,7 +45,9 @@
           "foreground": "p:text",
           "properties": {
             "home_icon": "~",
-            "style": "full"
+            //"style": "agnoster_short",
+            "style": "full",
+            "max_depth": 4
           },
           "powerline_symbol": "\ue0b4",
           "style": "powerline",
@@ -80,7 +91,7 @@
             "always_enabled": true
           },
           "style": "plain",
-          "template": "{{ if eq .Code 0 }} {{ else }}  {{ reason .Code }}{{ end }}",
+          "template": "{{ if eq .Code 0 }}{{ else }}  {{ reason .Code }}{{ end }}",
           "type": "exit"
         }
       ],
