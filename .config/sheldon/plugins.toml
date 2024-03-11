@@ -53,6 +53,11 @@ apply = ["source"]
 local = "~/dotfiles/.config/zsh/lazy"
 apply = ["defer"]
 
+# user plugins
+[plugins.dotfiles-plugins]
+local = "~/dotfiles/.config/zsh/extenstions"
+apply = ["defer"]
+
 # user completion
 [plugins.completion-restic]
 remote = "https://raw.githubusercontent.com/restic/restic/master/doc/zsh-completion.zsh"
