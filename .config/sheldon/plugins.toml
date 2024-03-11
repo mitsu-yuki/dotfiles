@@ -16,6 +16,7 @@ apply = ["defer"]
 # cutppuccin for zsh-syntax-highlighting
 [plugins.catppuccin-zsh-syntax-highlighting]
 remote = "https://raw.githubusercontent.com/catppuccin/zsh-syntax-highlighting/main/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh"
+apply = ["defer"]
 
 # autosuggestions
 [plugins.zsh-autosuggestions]
@@ -30,6 +31,7 @@ apply = ["defer"]
 # add completion
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
+apply = ["defer"]
 
 # user settings
 [plugins.dotfiles]
@@ -38,12 +40,12 @@ apply = ["source"]
 
 # user completion
 [plugins.completion-restic]
-remote = "https://github.com/restic/restic/blob/master/doc/zsh-completion.zsh"
+remote = "https://raw.githubusercontent.com/restic/restic/master/doc/zsh-completion.zsh"
 apply = ["fpath"]
 
-[plugins.completion-fd]
-remote = "https://github.com/sharkdp/fd/blob/master/contrib/completion/_fd"
-apply = ["fpath"]
+# [plugins.completion-fd]
+# remote = "https://raw.githubusercontent.com/sharkdp/fd/master/contrib/completion/_fd"
+# apply = ["fpath"]
 
 [plugins.compinit]
 inline = 'autoload -Uz compinit && compinit'
