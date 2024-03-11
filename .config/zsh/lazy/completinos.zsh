@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 kubectl() {
   unfunction "$0"
   source <(kubectl completion zsh)
@@ -9,3 +11,10 @@ helm() {
   source <(helm completion zsh)
   $0 "$@"
 }
+
+f() {
+  unfunction "${0}"
+  source <(thefuck --alias f)
+  "${0}" "${@}"
+}
+
