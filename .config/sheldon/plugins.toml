@@ -1,7 +1,7 @@
 shell = "zsh"
 
 [templates]
-defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
+defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"
 none = ""
 
 # lazy load plugin
@@ -33,10 +33,30 @@ apply = ["defer"]
 github = "zsh-users/zsh-completions"
 apply = ["defer"]
 
+# lazy load nvm
+[plugins.zsh-nvm]
+github = "lukechilds/zsh-nvm"
+apply = ["defer"]
+
+[plugins.zsh-nvm.hooks]
+pre = """
+export NVM_LAZY_LOAD=true
+export export NVM_LAZY_LOAD_EXTRA_COMMANDS=('vi' 'vim' 'nvim')
+"""
 # user settings
-[plugins.dotfiles]
-local = "~/dotfiles/.config/zsh/basic"
+[plugins.dotfiles-core]
+local = "~/dotfiles/.config/zsh/core"
 apply = ["source"]
+
+# user lazy settings
+[plugins.dotfiles-lazy]
+local = "~/dotfiles/.config/zsh/lazy"
+apply = ["defer"]
+
+# user plugins
+[plugins.dotfiles-plugins]
+local = "~/dotfiles/.config/zsh/extenstions"
+apply = ["defer"]
 
 # user completion
 [plugins.completion-restic]
