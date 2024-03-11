@@ -7,6 +7,6 @@ fi
 
 # oh-my-posh
 if which oh-my-posh > /dev/null 2>&1;then
-  theme_path=$(fd --full-path catppuccin.omp.json "${XDG_DATA_HOME}")
+  theme_path="${XDG_CONFIG_HOME}/oh-my-posh/catppuccin.omp.json"
   eval "$(oh-my-posh init zsh --config ${theme_path})"
 fi

@@ -48,7 +48,3 @@ apply = ["fpath"]
 [plugins.compinit]
 inline = 'autoload -Uz compinit && compinit'
 
-[plugins.oh-my-posh]
-github = "JanDeDobbeleer/oh-my-posh"
-apply = ["none"]
-
