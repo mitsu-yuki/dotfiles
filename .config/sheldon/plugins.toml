@@ -44,9 +44,14 @@ export NVM_LAZY_LOAD=true
 export export NVM_LAZY_LOAD_EXTRA_COMMANDS=('vi' 'vim' 'nvim')
 """
 # user settings
-[plugins.dotfiles]
-local = "~/dotfiles/.config/zsh/basic"
+[plugins.dotfiles-core]
+local = "~/dotfiles/.config/zsh/core"
 apply = ["source"]
+
+# user lazy settings
+[plugins.dotfiles-lazy]
+local = "~/dotfiles/.config/zsh/lazy"
+apply = ["defer"]
 
 # user completion
 [plugins.completion-restic]
