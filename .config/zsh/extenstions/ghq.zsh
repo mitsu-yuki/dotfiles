@@ -8,6 +8,7 @@ _fzf_cd_ghq()
   local root repo dir
   root="$(ghq root)"
   repo=$(ghq list | fzf --preview "printf '%s\n\n' {} ;ls ${root}/{}" --reverse --height=50%)
+  [ -z "${repo}" ] && return 0
   dir="${root}/${repo}"
   [ -d "${dir}" ] && cd "${dir}"
   zle accept-line
