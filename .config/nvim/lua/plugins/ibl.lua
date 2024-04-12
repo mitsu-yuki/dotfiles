@@ -7,6 +7,17 @@ return {
       indent = {
         char = "▏",
       },
+      scope = {
+        enabled = true,
+        char = "▏",
+        include = {
+          node_type = {
+            ["*"] = {
+              {"*"}
+            }
+          }
+        }
+      }
     })
     -- indent-blankline vim option
     vim.opt.list = true
