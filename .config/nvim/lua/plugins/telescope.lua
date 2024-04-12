@@ -42,8 +42,11 @@ return {
         },
         find_files = {
           initial_mode = "normal"
-        }
-      }
+        },
+        live_grep = {
+          only_sort_text = true
+        },
+      },
     })
   end,
 }
