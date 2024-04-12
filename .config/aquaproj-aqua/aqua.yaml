@@ -25,3 +25,4 @@ packages:
 - name: shellspec/shellspec@0.28.1
 - name: mvdan/sh@v3.8.0
 - name: sharkdp/hexyl@v0.14.0
+- name: golang/go@go1.22.2
