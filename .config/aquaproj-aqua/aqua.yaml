@@ -27,3 +27,4 @@ packages:
 - name: sharkdp/hexyl@v0.14.0
 - name: golang/go@go1.22.2
 - name: rhysd/vim-startuptime@v1.3.2
+- name: sharkdp/bat@v0.24.0
