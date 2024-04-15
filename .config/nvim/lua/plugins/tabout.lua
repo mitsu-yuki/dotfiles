@@ -1,6 +1,6 @@
 return {
   "abecodes/tabout.nvim",
-  event = "BufReadPre",
+  event = "InsertEnter",
   dependencies = {
     "nvim-treesitter/nvim-treesitter"
   },
