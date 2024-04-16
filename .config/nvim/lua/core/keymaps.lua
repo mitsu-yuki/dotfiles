@@ -45,8 +45,5 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- add keymaps
     -- ref: https://zenn.dev/botamotch/articles/21073d78bc68bf
     vim.keymap.set('n', 'gf', '<cmd>lua vim.lsp.buf.formatting()<CR>')
-    vim.keymap.set('n', 'ge', '<cmd>lua vim.diagnostic.open_float()<CR>')
-    vim.keymap.set('n', 'g]', '<cmd>lua vim.diagnostic.goto_next()<CR>')
-    vim.keymap.set('n', 'g[', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
   end,
 })
