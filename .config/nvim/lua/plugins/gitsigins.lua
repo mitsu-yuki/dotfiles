@@ -12,7 +12,8 @@ return {
         else
           gitsigns.nav_hunk("next")
         end
-      end)
+      end,
+      {desc = "Jump to the next hunk"})
       -- prev hunk
       vim.keymap.set("n", "[g", function()
         if vim.wo.diff then
@@ -20,7 +21,13 @@ return {
         else
           gitsigns.nav_hunk("prev")
         end
-      end)
+      end,
+      {desc = "Preview next hunk"})
+      -- aaaa
+      vim.keymap.set("n", "<leader>gd", function()
+        gitsigns.diffthis(nil, {split = "belowright"})
+      end,
+      {desc = "gitsigns: Show diff"})
     end
   },
   config = function(_, opts)
