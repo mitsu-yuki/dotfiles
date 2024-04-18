@@ -29,6 +29,7 @@ return {
       float = {
         source = "always",
         format = fmt,
+        border = "rounded",
       },
       signs = false,
     })
