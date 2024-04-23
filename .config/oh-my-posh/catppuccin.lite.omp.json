@@ -51,39 +51,6 @@
           "style": "powerline",
           "template": " {{ .Path }}",
           "type": "path"
-        },
-        {
-          "background": "p:lavender",
-          "foreground": "p:text",
-          "style": "powerline",
-          "properties": {
-            "branch_icon": "\ue725 ",
-            "cherry_pick_icon": "\ue29b ",
-            "commit_icon": "\uf417 ",
-            "fetch_status": true,
-            "fetch_upstream_icon": true,
-            "merge_icon": "\ue727 ",
-            "no_commits_icon": "\uf0c3 ",
-            "rebase_icon": "\ue728 ",
-            "revert_icon": "\uf0e2 ",
-            "tag_icon": "\uf412 "
-          },
-          "templates": [
-            "{{ if .UpstreamIcon }} {{ .UpstreamIcon }}{{ else }}  {{ end }}",
-            " {{ .HEAD }} ",
-            "{{ if .Working.Changed }}",
-              "{{ if .Staging.Added }} {{ .Staging.Added }} {{ end }}",
-              "{{ if .Staging.Modified }} {{ .Staging.Modified }} {{ end }}",
-              "{{ if .Working.Modified }} {{ .Working.Modified }} {{ end }}",
-              "{{ if .Working.Untracked }} {{ .Working.Untracked }} {{ end }}",
-            "{{ end }}",
-            "{{ if .Ahead }} {{ .Ahead }} {{ end }}",
-            "{{ if .Behind }} {{ .Behind }} {{ end }}",
-            "{{ if gt .StashCount 0 }}  {{ .StashCount }}{{end}}"
-          ],
-          "powerline_symbol": "\ue0b4",
-          "template": "{{ .Templates }}",
-          "type": "git"
         }
       ],
       "type": "prompt"
