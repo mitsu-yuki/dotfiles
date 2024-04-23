@@ -8,9 +8,9 @@ vim.keymap.set("n", "<C-N>", "<cmd>NvimTreeToggle<CR>")
 --ref: https://github.com/neovim/nvim-lspconfig/blob/796394fd19fb878e8dbc4fd1e9c9c186ed07a5f4/README.md#suggested-configuration
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, {desc = "Open flaot window"})
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, {desc = "Previous diagnostic"})
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, {desc = "Next diagnostic"})
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
 -- Use LspAttach autocommand to only map the following keys
@@ -45,8 +45,5 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- add keymaps
     -- ref: https://zenn.dev/botamotch/articles/21073d78bc68bf
     vim.keymap.set('n', 'gf', '<cmd>lua vim.lsp.buf.formatting()<CR>')
-    vim.keymap.set('n', 'ge', '<cmd>lua vim.diagnostic.open_float()<CR>')
-    vim.keymap.set('n', 'g]', '<cmd>lua vim.diagnostic.goto_next()<CR>')
-    vim.keymap.set('n', 'g[', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
   end,
 })
