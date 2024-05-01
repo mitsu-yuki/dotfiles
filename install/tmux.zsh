@@ -5,4 +5,4 @@ if [ -z "${XDG_CONFIG_HOME}" ];then
   source ~/.zshenv
 fi
 
-git clone https://github.com/tmux-plugins/tpm.git "${XDG_CONFIG_HOME}/tmux/plugins/tpm"
+git clone https://github.com/tmux-plugins/tpm.git "${XDG_DATA_HOME}/tmux/plugins/tpm"
