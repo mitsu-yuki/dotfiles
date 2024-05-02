@@ -7,7 +7,7 @@ if ! which nvm > /dev/null 2>&1;then
   touch /tmp/nvm
   cat << EOF > ${NVM_ENV}
 # nvm env
-export NVM_DIR="\$([ -z "\${XDG_CONFIG_HOME-}" ] && printf %s "\${HOME}/.nvm" || printf %s "\${XDG_CONFIG_HOME}/nvm")"
+export NVM_DIR="\$([ -z "\${XDG_DATA_HOME}" ] && printf %s "\${HOME}/.nvm" || printf %s "\${XDG_DATA_HOME}/nvm")"
 [ -s "\$NVM_DIR/nvm.sh" ] && \. "\$NVM_DIR/nvm.sh" # This loads nvm
 
 EOF
@@ -22,4 +22,3 @@ EOF
 else
   echo "nvm is already installed"
 fi
-nvm install --lts
