@@ -28,3 +28,4 @@ packages:
 - name: golang/go@go1.22.2
 - name: rhysd/vim-startuptime@v1.3.2
 - name: sharkdp/bat@v0.24.0
+- name: 8051Enthusiast/biodiff@v1.2.1
