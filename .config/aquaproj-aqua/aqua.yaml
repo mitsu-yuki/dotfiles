@@ -10,7 +10,7 @@ registries:
 - type: standard
   ref: v4.180.0 # renovate: depName=aquaproj/aqua-registry
 packages:
-- name: sharkdp/fd@v9.0.0
+- name: sharkdp/fd@v10.1.0
 - name: JanDeDobbeleer/oh-my-posh@v19.29.1
 - name: dandavison/delta@0.17.0
 - name: cantino/mcfly@v0.8.4
