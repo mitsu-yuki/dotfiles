@@ -70,3 +70,5 @@ apply = ["fpath"]
 [plugins.compinit]
 inline = 'autoload -Uz compinit && compinit'
 
+[plugins.editor]
+inline = "export EDITOR=nvim"
