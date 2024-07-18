@@ -6,7 +6,8 @@ local mac = wezterm.target_triple:find("darwin")
 -- window opacity
 config.window_background_opacity = 0.83
 config.window_padding = {
-  bottom = 0.5
+  bottom = 0
+}
 }
 -- color theme
 config.color_scheme = 'Catppuccin Mocha'
