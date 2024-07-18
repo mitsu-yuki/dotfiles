@@ -1,4 +1,5 @@
 local wezterm = require "wezterm"
+local act = wezterm.action
 local config = wezterm.config_builder()
 
 local mac = wezterm.target_triple:find("darwin")
@@ -14,10 +15,19 @@ config.color_scheme = 'Catppuccin Mocha'
 config.font_size = 12.0
 config.font = wezterm.font('HackGen Console NFJ')
 config.freetype_load_target = "Light"
-
 if mac then
   config.font_size = 15.0
 end
 
+-- key bind
+-- Swtich activate tab for ALT + Number key
+config.keys = {}
+for i = 1, 9 do
+  table.insert(config.keys, {
+    key = tostring(i),
+    mods = "ALT",
+    action = act.ActivateTab(i - 1)
+  })
+end
 return config
 
