@@ -3,11 +3,25 @@ local act = wezterm.action
 local config = wezterm.config_builder()
 
 local mac = wezterm.target_triple:find("darwin")
+
 -- window opacity
 config.window_background_opacity = 0.83
 config.window_padding = {
   bottom = 0
 }
+
+-- window close alert
+-- default setting
+config.skip_close_confirmation_for_processes_named = {
+  'bash',
+  'sh',
+  'zsh',
+  'fish',
+  --'tmux',
+  'nu',
+  'cmd.exe',
+  'pwsh.exe',
+  'powershell.exe',
 }
 -- color theme
 config.color_scheme = 'Catppuccin Mocha'
