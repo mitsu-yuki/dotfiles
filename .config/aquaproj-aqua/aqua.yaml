@@ -30,7 +30,7 @@ packages:
 - name: sharkdp/bat@v0.24.0
 - name: 8051Enthusiast/biodiff@v1.2.1
 - name: loft-sh/devpod@v0.5.12
-- name: golangci/golangci-lint@v1.59.1
+- name: golangci/golangci-lint@v1.60.1
 - name: denoland/deno@v1.45.2
 - name: helix-editor/helix@24.07
 - name: containerd/fuse-overlayfs-snapshotter@v1.0.8
