@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 # ref: https://github.com/nvm-sh/nvm/blob/deac4e0932eb3031656cdcbe12f0a7be2cacb69f/README.md#zsh
 # place this after nvm initialization!
 autoload -U add-zsh-hook
