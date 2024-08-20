@@ -35,3 +35,4 @@ packages:
 - name: helix-editor/helix@24.07
 - name: containerd/fuse-overlayfs-snapshotter@v1.0.8
 - name: air-verse/air@v1.52.3
+- name: sheepla/pingu@v0.0.5

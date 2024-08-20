@@ -7,6 +7,12 @@
     "github>aquaproj/aqua-renovate-config:installer-script#2.3.1(install.sh)"
   ],
   "automergeSchedule": [
-    "before 4am on Monday"
+    "before 4am"
+  ],
+  "packageRules": [
+    {
+      "matcuUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    }
   ]
 }
