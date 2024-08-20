@@ -23,7 +23,7 @@ packages:
 - name: junegunn/fzf@0.53.0
 - name: firecow/gitlab-ci-local@4.49.0
 - name: shellspec/shellspec@0.28.1
-- name: mvdan/sh@v3.8.0
+- name: mvdan/sh@v3.9.0
 - name: sharkdp/hexyl@v0.14.0
 - name: golang/go@go1.22.3
 - name: rhysd/vim-startuptime@v1.3.2
