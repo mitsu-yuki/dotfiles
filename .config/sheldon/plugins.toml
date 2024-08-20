@@ -41,7 +41,7 @@ apply = ["defer"]
 [plugins.zsh-nvm.hooks]
 pre = """
 export NVM_LAZY_LOAD=true
-export export NVM_LAZY_LOAD_EXTRA_COMMANDS=('vi' 'vim' 'nvim')
+export NVM_LAZY_LOAD_EXTRA_COMMANDS=('vi' 'vim' 'nvim')
 """
 # user settings
 [plugins.dotfiles-core]
