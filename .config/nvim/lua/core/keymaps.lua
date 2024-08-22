@@ -3,7 +3,6 @@ vim.keymap.set("n", "<C-G>", "<cmd>Telescope live_grep<CR>")
 vim.keymap.set("n", "<C-T>g", "<cmd>Telescope grep_string default_text=<CR>")
 vim.keymap.set("n", "<C-B>", "<cmd>Telescope buffers<CR>")
 vim.keymap.set("n", "<C-T>n", "<cmd>Telescope notify<CR>")
-vim.keymap.set("n", "<C-N>", "<cmd>NvimTreeToggle<CR>")
 
 -- ref: https://superuser.com/questions/299646/vim-make-star-command-stay-on-current-word
 -- カーソル位置の単語をハイライトするやつ
