@@ -5,6 +5,10 @@ vim.keymap.set("n", "<C-B>", "<cmd>Telescope buffers<CR>")
 vim.keymap.set("n", "<C-T>n", "<cmd>Telescope notify<CR>")
 vim.keymap.set("n", "<C-N>", "<cmd>NvimTreeToggle<CR>")
 
+-- ref: https://superuser.com/questions/299646/vim-make-star-command-stay-on-current-word
+-- カーソル位置の単語をハイライトするやつ
+vim.keymap.set("n", "*", "<cmd>let @/='\\<'.expand('<cword>').'\\>'<CR>:set hlsearch<CR>")
+
 --ref: https://github.com/neovim/nvim-lspconfig/blob/796394fd19fb878e8dbc4fd1e9c9c186ed07a5f4/README.md#suggested-configuration
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
