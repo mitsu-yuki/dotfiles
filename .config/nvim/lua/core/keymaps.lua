@@ -8,9 +8,9 @@ vim.keymap.set("n", "<C-N>", "<cmd>NvimTreeToggle<CR>")
 --ref: https://github.com/neovim/nvim-lspconfig/blob/796394fd19fb878e8dbc4fd1e9c9c186ed07a5f4/README.md#suggested-configuration
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, {desc = "Open flaot window"})
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, {desc = "Previous diagnostic"})
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, {desc = "Next diagnostic"})
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, { desc = "Open flaot window" })
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Next diagnostic" })
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
 -- Use LspAttach autocommand to only map the following keys
@@ -27,13 +27,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
     vim.keymap.set(
       'n', 'gd', "<cmd>Lspsaga peek_definition<CR>",
-      { buffer = ev.buf, desc = "Show Code definition"}
+      { buffer = ev.buf, desc = "Show Code definition" }
     )
     -- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
     -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
     vim.keymap.set(
       'n', 'K', "<cmd>Lspsaga hover_doc<CR>",
-      {buffer = ev.buf, desc = "Show documentation"}
+      { buffer = ev.buf, desc = "Show documentation" }
     )
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
@@ -45,12 +45,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
     vim.keymap.set(
       'n', '<space>D', "<cmd>Lspsaga peek_type_definition<CR>",
-      {buffer = ev.buf, desc = "Show type definition"}
+      { buffer = ev.buf, desc = "Show type definition" }
     )
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
     vim.keymap.set(
       { 'n', 'v' }, '<space>ca', "<cmd>Lspsaga code_action<CR>",
-      {buffer = ev.buf, desc = "Show code action"}
+      { buffer = ev.buf, desc = "Show code action" }
     )
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
     vim.keymap.set('n', '<space>f', function()
