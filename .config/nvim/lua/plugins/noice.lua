@@ -13,11 +13,11 @@ return {
   opts = {
     cmdline = {
       enable = true,
-      view = "cmdline_popup"
+      view = "cmdline_popup",
     },
     messages = {
       enable = true,
-      view_search = false
-    }
+      view_search = false,
+    },
   },
 }
