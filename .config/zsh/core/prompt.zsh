@@ -16,16 +16,22 @@ if which oh-my-posh > /dev/null 2>&1;then
   function prompt_full_cmd() {
       oh-my-posh print primary --config "${XDG_CONFIG_HOME}/oh-my-posh/${theme}.omp.json"
   }
+  function background_jobs() {
+    export BG_JOBS=$(jobs | wc -l)
+  }
 
+  background_jobs
   PROMPT='$(prompt_lite_cmd)'
   ASYNC_PROC=0
   function chpwd() {
+      BG_JOBS=$(background_jobs)
       PROMPT='$(prompt_lite_cmd)'
   }
 
   function precmd() {
     function async() {
       # save to temp file
+      background_jobs
       printf "%s" "$(prompt_full_cmd)" > "/tmp/zsh_prompt_$$"
       # signal parent
       kill -s USR1 $$
@@ -54,6 +60,7 @@ if which oh-my-posh > /dev/null 2>&1;then
     zle && zle reset-prompt
 
     # prepare for next
+    background_jobs
     PROMPT="$(prompt_lite_cmd)"
   }
 fi
