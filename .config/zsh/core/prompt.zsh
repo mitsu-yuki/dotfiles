@@ -17,7 +17,7 @@ if which oh-my-posh > /dev/null 2>&1;then
       oh-my-posh print primary --config "${XDG_CONFIG_HOME}/oh-my-posh/${theme}.omp.json"
   }
   function background_jobs() {
-    export BG_JOBS=$(jobs | wc -l)
+    export BG_JOBS=$(jobs | wc -l | xargs)
   }
 
   background_jobs
