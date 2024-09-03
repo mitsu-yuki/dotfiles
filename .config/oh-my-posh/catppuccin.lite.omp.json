@@ -58,7 +58,7 @@
           "foreground": "p:text",
           "powerline_symbol": "\ue0b4",
           "style": "powerline",
-          "template": "{{ if ne .Env.BG_JOBS \"0\" }}  {{ .Env.BG_JOBS }}{{ end }}",
+          "template": "{{ if and (ne .Env.BG_JOBS \"0\") (ne .Env.BG_JOBS \"\") }}  {{ .Env.BG_JOBS }}{{ end }}",
           "type": "text"
         }
       ],
