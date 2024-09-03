@@ -84,6 +84,14 @@
           "powerline_symbol": "\ue0b4",
           "template": "{{ .Templates }}",
           "type": "git"
+        },
+        {
+          "background": "p:peach",
+          "foreground": "p:text",
+          "powerline_symbol": "\ue0b4",
+          "style": "powerline",
+          "template": "{{ if ne .Env.BG_JOBS \"0\" }}  {{ .Env.BG_JOBS }}{{ end }}",
+          "type": "text"
         }
       ],
       "type": "prompt"
