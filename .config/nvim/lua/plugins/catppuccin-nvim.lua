@@ -6,6 +6,7 @@ return {
     flavour = "mocha",
     transparent_background = true,
     integrations = {
+      barbar = true,
       mason = true,
       noice = true,
       telescope = {
