@@ -6,13 +6,6 @@ return {
   },
   dependencies = {
     "nvim-lua/plenary.nvim",
-    {
-      "nvim-telescope/telescope-frecency.nvim",
-      config = function()
-        require('telescope').load_extension('frecency')
-      end,
-      dependencies = { "kkharji/sqlite.lua" }
-    },
     "nvim-tree/nvim-web-devicons",
   },
   config = function()

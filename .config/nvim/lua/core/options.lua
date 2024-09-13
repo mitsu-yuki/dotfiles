@@ -43,3 +43,7 @@ vim.opt.fileencodings = "utf-8,iso-2022-jp,euc-jp,sjis"
 
 -- CursorHold time
 vim.opt.updatetime = 200
+
+-- Visible space
+vim.opt.list = true
+vim.opt.listchars = {trail = "·", tab = "──"}
