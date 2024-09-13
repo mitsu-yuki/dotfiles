@@ -46,4 +46,4 @@ vim.opt.updatetime = 200
 
 -- Visible space
 vim.opt.list = true
-vim.opt.listchars = {space = "·", tab = "──"}
+vim.opt.listchars = {trail = "·", tab = "──"}
