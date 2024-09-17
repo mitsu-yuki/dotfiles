@@ -3,21 +3,25 @@ return {
   event = "VeryLazy",
   dependencies = {
     "MunifTanjim/nui.nvim",
-    {
-      "rcarriga/nvim-notify",
-      opts = {
-        background_colour = "#000000"
-      }
-    }
   },
   opts = {
     cmdline = {
-      enable = true,
+      enabled = true,
       view = "cmdline_popup",
     },
     messages = {
-      enable = true,
-      view_search = false,
+      enabled = true,
+      view = "mini",
+      view_options = {
+        timeout = 3000
+      },
+    },
+    popupmenu = {
+      enabled = false,
     },
   },
+  config = function(_, opts)
+    require("noice").setup(opts)
+    vim.opt.cmdheight = 0
+  end
 }
