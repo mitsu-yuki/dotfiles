@@ -28,7 +28,7 @@ packages:
 - name: rhysd/vim-startuptime@v1.3.2
 - name: sharkdp/bat@v0.24.0
 - name: 8051Enthusiast/biodiff@v1.2.1
-- name: loft-sh/devpod@v0.5.20
+- name: loft-sh/devpod@v0.5.21
 - name: denoland/deno@v1.46.3
 - name: golangci/golangci-lint@v1.61.0
 - name: air-verse/air@v1.60.0
