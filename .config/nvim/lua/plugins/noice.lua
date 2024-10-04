@@ -12,6 +12,7 @@ return {
     messages = {
       enabled = true,
       view = "mini",
+      view_search = false,
       view_options = {
         timeout = 3000
       },
