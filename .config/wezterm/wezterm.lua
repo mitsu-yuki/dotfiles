@@ -44,5 +44,8 @@ for i = 1, 9 do
     action = act.ActivateTab(i - 1)
   })
 end
+
+-- use ime
+config.use_ime = true
 return config
 
