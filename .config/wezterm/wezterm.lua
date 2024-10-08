@@ -32,6 +32,7 @@ config.font = wezterm.font('HackGen Console NFJ')
 config.freetype_load_target = "Light"
 if mac then
   config.font_size = 15.0
+  config.macos_window_background_blur = 20
 end
 
 -- key bind

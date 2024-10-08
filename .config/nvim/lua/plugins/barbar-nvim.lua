@@ -28,9 +28,9 @@ return {
         end),
         group = "barbar_render",
       })
-    vim.keymap.set("n", "<space>n", "<cmd>BufferNext<CR>", { desc = "Move next buffer" })
-    vim.keymap.set("n", "<space>p", "<cmd>BufferPrevious<CR>", { desc = "Move previous buffer" })
-    vim.keymap.set("n", "<space>w", "<cmd>BufferClose<CR>", { desc = "Close buffer" })
-    vim.keymap.set("n", "<space>W", "<cmd>BufferRestore<CR>", { desc = "Move previous buffer" })
+    vim.keymap.set("n", "bn", "<cmd>BufferNext<CR>", { desc = "Move next buffer" })
+    vim.keymap.set("n", "bp", "<cmd>BufferPrevious<CR>", { desc = "Move previous buffer" })
+    vim.keymap.set("n", "bw", "<cmd>BufferClose<CR>", { desc = "Close buffer" })
+    vim.keymap.set("n", "bW", "<cmd>BufferRestore<CR>", { desc = "Move previous buffer" })
   end
 }
