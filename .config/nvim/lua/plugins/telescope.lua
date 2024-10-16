@@ -24,8 +24,8 @@ return {
         scroll_strategy = "limit",
         mappings = {
           i = {
-            ["<C-c>"] = {"<esc>", type = "command"},
-            ["<CR>"] = {"<esc>", type = "command"},
+            ["<C-c>"] = { "<esc>", type = "command" },
+            ["<CR>"] = { "<esc>", type = "command" },
           },
           n = {
             ["<C-c>"] = actions.close,
