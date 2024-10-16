@@ -29,6 +29,8 @@ vim.opt.hidden = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
+-- sign colunm
+vim.opt.signcolumn = "yes"
 -- replace preview
 vim.opt.inccommand = 'split'
 
