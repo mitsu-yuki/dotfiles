@@ -43,6 +43,9 @@ return {
         find_files = {
           initial_mode = "normal"
         },
+        grep_string = {
+          initial_mode = "normal"
+        },
         live_grep = {
           only_sort_text = true
         },
