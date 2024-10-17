@@ -8,10 +8,10 @@ return {
     "ToggleTermSendVisualLines",
     "ToggleTermSendVisualSelection",
   },
-  keys = { [[<c-\>]] },
+  keys = { [[<C-]>]] },
   opts = {
     size = 20,
-    open_mapping = [[<c-\>]],
+    open_mapping = [[<C-]>]],
     hidde_numbers = true,
     start_in_insert = true,
     insert_mappings = true,
