@@ -8,9 +8,12 @@ _fzf_cd_ghq()
   local root repo dir
   root="$(ghq root)"
   repo=$(ghq list | fzf --preview "printf '%s\n\n' {} ;ls ${root}/{}" --reverse --height=50%)
-  [ -z "${repo}" ] && return 0
+  if [ -z "${repo}" ];then
+    zle reset-prompt
+    return 0
+  fi
   dir="${root}/${repo}"
-  [ -d "${dir}" ] && cd "${dir}"
+  [ -d "${dir}" ] && BUFFER="cd ${dir}"
   zle accept-line
   zle reset-prompt
 }
