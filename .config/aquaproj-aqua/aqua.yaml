@@ -20,7 +20,7 @@ packages:
 - name: x-motemen/ghq@v1.6.2
 - name: sharkdp/vivid@v0.10.1
 - name: firecow/gitlab-ci-local@4.55.0
-- name: junegunn/fzf@v0.55.0
+- name: junegunn/fzf@v0.56.0
 - name: shellspec/shellspec@0.28.1
 - name: mvdan/sh@v3.10.0
 - name: sharkdp/hexyl@v0.14.0
