@@ -33,18 +33,6 @@ apply = ["defer"]
 github = "zsh-users/zsh-completions"
 apply = ["defer"]
 
-# lazy load nvm
-[plugins.zsh-nvm]
-github = "lukechilds/zsh-nvm"
-apply = ["defer"]
-
-[plugins.zsh-nvm.hooks]
-pre = """
-export NVM_LAZY_LOAD=true
-export NVM_LAZY_LOAD_EXTRA_COMMANDS=('vi' 'vim' 'nvim')
-export NVM_AUTO_USE=true
-"""
-
 # user settings
 [plugins.dotfiles-core]
 local = "~/dotfiles/.config/zsh/core"

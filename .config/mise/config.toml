@@ -1,0 +1,6 @@
+[tools]
+neovim = "0.10.1"
+go = "latest"
+"npm:devcontainer" = "latest"
+node = "20"
+"npm:aicommit2" = "latest"

@@ -12,11 +12,17 @@ if [ "${os_type}" = "Darwin" ];then
   elif [ "${machine_arch}" = "x86_64" ];then
     eval "$(/usr/local/bin/brew shellenv)"
   fi
-elif [ "${os_type}" = "Linux" ];then
-  export PATH="/snap/bin:${PATH}"
 fi
 
 # load managed sheldon plugins
 if which sheldon > /dev/null 2>&1 ;then
   eval "$(sheldon source)"
 fi
+
+# load mise setting
+MISE_PATH="${HOME}/dotfiles/.local/bin/mise"
+if [ -f "${MISE_PATH}" ];then
+  eval "$("${MISE_PATH}" activate zsh)"
+  eval "$("${MISE_PATH}" activate --shims)"
+fi
+
