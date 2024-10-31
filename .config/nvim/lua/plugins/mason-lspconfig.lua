@@ -10,7 +10,7 @@ return {
       "dockerls",
       "eslint",
       "gopls",
-      "tsserver",
+      "ts_ls",
       "lua_ls",
       "perlnavigator",
     }
