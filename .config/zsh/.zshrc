@@ -12,8 +12,6 @@ if [ "${os_type}" = "Darwin" ];then
   elif [ "${machine_arch}" = "x86_64" ];then
     eval "$(/usr/local/bin/brew shellenv)"
   fi
-elif [ "${os_type}" = "Linux" ];then
-  export PATH="/snap/bin:${PATH}"
 fi
 
 # load managed sheldon plugins
