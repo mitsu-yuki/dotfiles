@@ -18,3 +18,11 @@ fi
 if which sheldon > /dev/null 2>&1 ;then
   eval "$(sheldon source)"
 fi
+
+# load mise setting
+MISE_PATH="${HOME}/dotfiles/.local/bin/mise"
+if [ -f "${MISE_PATH}" ];then
+  eval "$("${MISE_PATH}" activate zsh)"
+  eval "$("${MISE_PATH}" activate --shims)"
+fi
+
