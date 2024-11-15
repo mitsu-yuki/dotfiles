@@ -24,7 +24,7 @@ packages:
 - name: shellspec/shellspec@0.28.1
 - name: mvdan/sh@v3.10.0
 - name: sharkdp/hexyl@v0.15.0
-- name: golang/go@go1.23.2
+- name: golang/go@go1.23.3
 - name: rhysd/vim-startuptime@v1.3.2
 - name: sharkdp/bat@v0.24.0
 - name: 8051Enthusiast/biodiff@v1.2.1
