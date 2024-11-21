@@ -6,7 +6,6 @@
     "github>aquaproj/aqua-renovate-config#2.3.1",
     "github>aquaproj/aqua-renovate-config:installer-script#2.3.1(install/aqua.zsh)"
   ],
-  "schedule": ["* * 1/14 * *"],
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
