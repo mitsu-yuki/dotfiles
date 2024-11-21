@@ -23,6 +23,10 @@ config.skip_close_confirmation_for_processes_named = {
   'pwsh.exe',
   'powershell.exe',
 }
+
+-- disable wezterm alert
+config.warn_about_missing_glyphs = false
+
 -- color theme
 config.color_scheme = 'Catppuccin Mocha'
 
