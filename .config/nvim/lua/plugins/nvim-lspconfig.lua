@@ -12,6 +12,8 @@ return {
         local opts = {
           capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
         }
+
+        -- volar settting
         if server == "volar" then
           opts.filetypes = {"vue", "typescript", "javascript"}
           opts.init_options = {
