@@ -1,3 +1,4 @@
 require("core/options")
-require("core/lazy-nvim")
+require("core/indent")
 require("core/keymaps")
+require("core/lazy-nvim")
