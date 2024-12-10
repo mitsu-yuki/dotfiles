@@ -27,10 +27,15 @@ return {
         -- ref: https://www.reddit.com/r/neovim/comments/10qrriw/comment/j6rkbzp/
         if server == "yamlls" then
           opts.filetypes = {"yaml", "yml"}
-          opts.yaml = {
-            hover = true,
-            completion = true,
-            validate = true,
+          opts.settings = {
+            yaml = {
+              hover = true,
+              completion = true,
+              validate = true,
+              schemas = {
+                kubernetes = "*.yaml"
+              }
+            }
           }
         end
         require("lspconfig")[server].setup(opts)
