@@ -21,6 +21,7 @@ vim.opt.clipboard:append{'unnamedplus'}
 -- keymap
 vim.keymap.set('i', '<C-c>', '<ESC>')
 vim.keymap.set('t', '<ESC>', [[<C-\><C-n>]], {silent = true})
+vim.g.mapleader = vim.keycode("<space>")
 
 -- don't check close buffer
 vim.opt.hidden = true

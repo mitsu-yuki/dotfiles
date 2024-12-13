@@ -14,7 +14,7 @@ helm() {
 
 f() {
   unfunction "${0}"
-  source <(thefuck --alias f)
+  source <(pay-respects zsh --alias)
   "${0}" "${@}"
 }
 
