@@ -8,7 +8,7 @@ return {
     "AvanteRefresh",
     "AvanteSwitchProvider",
     "AvanteShowRepoMap",
-    "AvanteToglle"
+    "AvanteToggle"
   },
   build = "make BUILD_FROM_SOURCE=true",
   dependencies = {
@@ -33,7 +33,7 @@ return {
           api_key_name = "",
           endpoint = ollama_host .. "/v1",
           model = model_name,
-          max_token = 65535,
+          max_token = 8192,
       }
     end
     require("avante").setup({
@@ -44,6 +44,28 @@ return {
         ["ollama_marco"] = ollama_model("marco-o1:latest"),
         ["ollama_deepseek"] = ollama_model("deepseek-coder:6.7b"),
         ["ollama_gemma2"] = ollama_model("gemma2:latest"),
+      },
+      behaviour = {
+        auto_suggestions = true,
+      },
+      windows = {
+        position = "left",
+        wrap = true,
+        sidebar_header = {
+          align = "center",
+          rounded = true,
+        },
+        ask = {
+          floating = true,
+        },
+      },
+      mappings = {
+        suggestion = {
+          accept = "<leader><Tab>",
+          next = "<leader>]",
+          prev = "<leader>[",
+          dismiss = "<leader>q"
+        },
       },
     })
   end
