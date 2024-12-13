@@ -26,39 +26,25 @@ return {
   end,
   config = function()
     local ollama_host = os.getenv("OLLAMA_HOST")
+    ---@param model_name string
+    local ollama_model = function(model_name)
+      return {
+          __inherited_from = "openai",
+          api_key_name = "",
+          endpoint = ollama_host .. "/v1",
+          model = model_name,
+          max_token = 65535,
+      }
+    end
     require("avante").setup({
       provider = "ollama_qwen",
       auto_suggestions_provider = "ollama_qwen",
       vendors = {
-        ["ollama_qwen"] = {
-          __inherited_from = "openai",
-          api_key_name = "",
-          endpoint = ollama_host .. "/v1",
-          model = "qwen2.5-coder:latest",
-          max_token = 65535,
-        },
-        ["ollama_marco"] = {
-          __inherited_from = "openai",
-          api_key_name = "",
-          endpoint = ollama_host .. "/v1",
-          model = "marco-o1:latest",
-          max_token = 65535,
-        },
-        ["ollama_deepseek"] = {
-          __inherited_from = "openai",
-          api_key_name = "",
-          endpoint = ollama_host .. "/v1",
-          model = "deepseek-coder:6.7b",
-          max_token = 65535,
-        },
-        ["ollama_gemma2"] = {
-          __inherited_from = "openai",
-          api_key_name = "",
-          endpoint = ollama_host .. "/v1",
-          model = "gemma2:latest",
-          max_token = 65535,
-        },
-      }
+        ["ollama_qwen"] = ollama_model("qwen2.5-coder:latest"),
+        ["ollama_marco"] = ollama_model("marco-o1:latest"),
+        ["ollama_deepseek"] = ollama_model("deepseek-coder:6.7b"),
+        ["ollama_gemma2"] = ollama_model("gemma2:latest"),
+      },
     })
   end
 }
