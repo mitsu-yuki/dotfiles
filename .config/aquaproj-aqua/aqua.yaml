@@ -25,7 +25,7 @@ packages:
 - name: sharkdp/bat@v0.24.0
 - name: 8051Enthusiast/biodiff@v1.2.1
 - name: golangci/golangci-lint@v1.62.2
-- name: air-verse/air@v1.61.1
+- name: air-verse/air@v1.61.4
 - name: sheepla/pingu@v0.0.5
 - name: golang/tools/goimports@v0.27.0
 - name: goreleaser/nfpm@v2.41.1
