@@ -1,3 +1,5 @@
+---@module "lazy"
+---@type LazySpec
 return {
   "yetone/avante.nvim",
   cmd = { "AvanteAsk",
@@ -28,14 +30,18 @@ return {
     local ollama_host = os.getenv("OLLAMA_HOST")
     ---@param model_name string
     local ollama_model = function(model_name)
+      ---@module "avante"
+      ---@type AvanteSupportedProvider
       return {
-          __inherited_from = "openai",
-          api_key_name = "",
-          endpoint = ollama_host .. "/v1",
-          model = model_name,
-          max_token = 8192,
+        __inherited_from = "openai",
+        api_key_name = "",
+        endpoint = ollama_host .. "/v1",
+        model = model_name,
+        max_token = 8192,
       }
     end
+    ---@module "avante"
+    ---@type avante.Config
     require("avante").setup({
       provider = "ollama_qwen",
       auto_suggestions_provider = "ollama_qwen",
