@@ -9,10 +9,13 @@ return {
       "clangd",
       "dockerls",
       "eslint",
+      "golangci_lint_ls",
       "gopls",
-      "ts_ls",
       "lua_ls",
       "perlnavigator",
+      "ts_ls",
+      "volar",
+      "yamlls",
     }
   }
 }
