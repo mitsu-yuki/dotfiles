@@ -12,4 +12,4 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
 --ref: https://zenn.dev/vim_jp/articles/43d021f461f3a4
 vim.keymap.set('n', 'x', '"_x')
-vim.keymap.set('n', 'p', 'P')
+vim.keymap.set('x', 'p', 'P')
