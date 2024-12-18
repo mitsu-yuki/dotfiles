@@ -1,5 +1,6 @@
 -- Settings
 vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- indent
 vim.opt.tabstop = 2
