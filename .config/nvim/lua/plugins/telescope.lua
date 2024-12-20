@@ -9,11 +9,11 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   keys = {
-    { "<C-F>",  "<cmd>Telescope find_files<CR>",                desc = "find files" },
-    { "<C-G>",  "<cmd>Telescope live_grep<CR>",                 desc = "live grep" },
-    { "<C-T>g", "<cmd>Telescope grep_string default_text=<CR>", desc = "grep string on cursor word" },
-    { "<C-B>",  "<cmd>Telescope buffers<CR>",                   desc = "buffer list" },
-    { "<C-T>n", "<cmd>Telescope notify<CR>",                    desc = "notify list" },
+    { "<C-F>",    "<cmd>Telescope find_files<CR>",                desc = "find files" },
+    { "<C-G>",    "<cmd>Telescope live_grep<CR>",                 desc = "live grep" },
+    { "<C-T>g",   "<cmd>Telescope grep_string default_text=<CR>", desc = "grep string on cursor word" },
+    { "<space>b", "<cmd>Telescope buffers<CR>",                   desc = "buffer list" },
+    { "<C-T>n",   "<cmd>Telescope notify<CR>",                    desc = "notify list" },
   },
   config = function()
     local telescope = require("telescope")

@@ -1,6 +1,10 @@
+---@module "lazy"
+---@type LazySpec
 return {
   "romgrk/barbar.nvim",
   event = { "BufReadPost", "BufAdd", "BufNewFile" },
+  ---@type barbar.config.options
+  ---@diagnostic disable: missing-fields
   opts = {
     highlight_visible = false,
     icons = {
@@ -16,6 +20,7 @@ return {
       },
     },
   },
+  ---@diagnostic enable: missing-fields
   config = function(_, opts)
     require("barbar").setup(opts)
     require("transparent").clear_prefix("Buffer")
@@ -28,9 +33,9 @@ return {
         end),
         group = "barbar_render",
       })
-    vim.keymap.set("n", "bn", "<cmd>BufferNext<CR>", { desc = "Move next buffer" })
-    vim.keymap.set("n", "bp", "<cmd>BufferPrevious<CR>", { desc = "Move previous buffer" })
-    vim.keymap.set("n", "bw", "<cmd>BufferClose<CR>", { desc = "Close buffer" })
-    vim.keymap.set("n", "bW", "<cmd>BufferRestore<CR>", { desc = "Move previous buffer" })
+    vim.keymap.set("n", "<leader>n", "<cmd>BufferNext<CR>", { desc = "Move next buffer" })
+    vim.keymap.set("n", "<leader>p", "<cmd>BufferPrevious<CR>", { desc = "Move previous buffer" })
+    vim.keymap.set("n", "<leader>w", "<cmd>BufferClose<CR>", { desc = "Close buffer" })
+    vim.keymap.set("n", "<leader>W", "<cmd>BufferRestore<CR>", { desc = "Move previous buffer" })
   end
 }
