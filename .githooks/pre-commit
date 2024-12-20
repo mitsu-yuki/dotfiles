@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# prohibit commits to main branch
+protected_branch="main"
+if [ "$(git rev-parse --abbrev-ref HEAD)" == "${protected_branch}" ]; then
+  echo "❌ Error: You are trying to commit directly to ${protected_branch}!"
+  echo "Please create a new branch and commit there instead. 🌟"
+  exit 1
+fi
