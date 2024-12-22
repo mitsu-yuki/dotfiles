@@ -11,7 +11,7 @@ registries:
   ref: v4.283.0 # renovate: depName=aquaproj/aqua-registry
 packages:
 - name: sharkdp/fd@v10.2.0
-- name: JanDeDobbeleer/oh-my-posh@v24.16.1
+- name: JanDeDobbeleer/oh-my-posh@v24.17.0
 - name: dandavison/delta@0.18.2
 - name: rossmacarthur/sheldon@0.8.0
 - name: BurntSushi/ripgrep@14.1.1
