@@ -15,6 +15,10 @@ if [ -n "$(which nvim)" ];then
   alias vim='nvim'
 fi
 
+if [ -n "$(which bat)" ]; then
+  alias less="bat --paging always"
+fi
+
 function rgless(){
   rg -p "$@" | less -R
 }
