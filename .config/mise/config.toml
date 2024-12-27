@@ -1,5 +1,5 @@
 [tools]
-neovim = "0.10.1"
+neovim = "latest"
 go = "latest"
 "npm:devcontainer" = "latest"
 node = "20"
@@ -9,3 +9,6 @@ python = "latest"
 "cargo:pay-respects" = "latest"
 vhs = "latest"
 ttyd = "latest"
+"npm:czg" = "latest"
+"pipx:ansible-lint" = "latest"
+"pipx:ansible" = "latest"
