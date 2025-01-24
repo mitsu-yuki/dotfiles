@@ -22,5 +22,3 @@ fi
 if which sheldon > /dev/null 2>&1 ;then
   eval "$(sheldon source)"
 fi
-
-
