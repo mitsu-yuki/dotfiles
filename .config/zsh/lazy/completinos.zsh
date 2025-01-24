@@ -1,16 +1,19 @@
 #!/usr/bin/env zsh
 
-kubectl() {
-  unfunction "$0"
+# kubectl completion
+if which kubectl;then
   source <(kubectl completion zsh)
-  $0 "$@"
-}
+fi
 
-helm() {
-  unfunction "$0"
+# mise completion
+if which mise; then
+  source <(mise completion zsh)
+fi
+
+# helm completion
+if which helm; then
   source <(helm completion zsh)
-  $0 "$@"
-}
+fi
 
 f() {
   unfunction "${0}"
@@ -18,3 +21,8 @@ f() {
   "${0}" "${@}"
 }
 
+# aws completion
+if which aws; then
+  autoload -Uz bashcompinit && bashcompinit
+  complete -C $(which aws_completer) aws
+fi
