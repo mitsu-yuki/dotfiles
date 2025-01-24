@@ -15,15 +15,16 @@ return {
     end
 
     vim.diagnostic.config({
-      virtual_text = {
-        source = "always",
-        format = fmt,
-      },
-      float = {
-        source = "always",
-        format = fmt,
-        border = "rounded",
-      },
+      virtual_text = false,
+      -- virtual_text = {
+      --   source = "always",
+      --   format = fmt,
+      -- },
+      -- float = {
+      --   source = "always",
+      --   format = fmt,
+      --   border = "rounded",
+      -- },
       signs = false,
     })
   end
