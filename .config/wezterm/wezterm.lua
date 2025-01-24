@@ -32,7 +32,7 @@ config.color_scheme = 'Catppuccin Mocha'
 
 -- font setting
 config.font_size = 12.0
-config.font = wezterm.font('HackGen Console NFJ')
+config.font = wezterm.font('HackGen Console NF')
 config.freetype_load_target = "Light"
 if mac then
   config.font_size = 15.0
