@@ -10,7 +10,7 @@ return {
       view = "cmdline_popup",
     },
     messages = {
-      enabled = true,
+      enabled = false,
       view = "mini",
       view_search = false,
       view_options = {
