@@ -45,7 +45,7 @@ apply = ["defer"]
 
 # user plugins
 [plugins.dotfiles-plugins]
-local = "~/dotfiles/.config/zsh/extenstions"
+local = "~/dotfiles/.config/zsh/extensions"
 apply = ["defer"]
 
 # user completion
