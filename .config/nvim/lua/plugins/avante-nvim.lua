@@ -53,7 +53,7 @@ return {
         ["ollama_phi4"] = ollama_model("phi4:latest"),
       },
       behaviour = {
-        auto_suggestions = true,
+        auto_suggestions = false,
       },
       windows = {
         position = "left",
