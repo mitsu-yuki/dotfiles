@@ -30,6 +30,7 @@ monitors.xml~
 mono.addins/
 nautilus/
 neofetch/
+nvimdots.dev
 Pinta/
 pulse/
 QtProject.conf
@@ -39,6 +40,7 @@ tabby/
 thefuck/
 tiling-assistant/
 totem/
+Typora/
 ubuntu-xdg-terminals.list
 user-dirs.dirs
 user-dirs.locale
