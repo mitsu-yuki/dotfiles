@@ -57,6 +57,7 @@ ttyd = "latest"
 usage = "latest"
 vhs = "latest"
 vivid = "latest"
+yq = "latest"
 
 [settings]
 experimental = true
