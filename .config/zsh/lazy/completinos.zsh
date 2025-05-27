@@ -26,3 +26,8 @@ if which aws; then
   autoload -Uz bashcompinit && bashcompinit
   complete -C $(which aws_completer) aws
 fi
+
+# github cli completion
+if which gh; then
+  source <(gh completion -s zsh)
+fi
