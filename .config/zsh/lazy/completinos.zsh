@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # kubectl completion
-if which kubectl;then
+if which kubectl; then
   source <(kubectl completion zsh)
 fi
 
@@ -25,4 +25,9 @@ f() {
 if which aws; then
   autoload -Uz bashcompinit && bashcompinit
   complete -C $(which aws_completer) aws
+fi
+
+# github cli completion
+if which gh; then
+  source <(gh completion -s zsh)
 fi
