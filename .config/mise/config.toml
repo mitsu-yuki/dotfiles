@@ -1,4 +1,5 @@
 [tools]
+act = "0.2.77"
 air = "latest"
 "aqua:8051Enthusiast/biodiff" = "latest"
 "aqua:JanDeDobbeleer/oh-my-posh" = "latest"
