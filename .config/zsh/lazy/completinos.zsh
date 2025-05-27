@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # kubectl completion
-if which kubectl;then
+if which kubectl; then
   source <(kubectl completion zsh)
 fi
 
