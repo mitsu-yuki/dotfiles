@@ -3,8 +3,8 @@
   "timezone": "Asia/Tokyo",
   "extends": [
     "config:recommended",
-    "github>aquaproj/aqua-renovate-config#2.8.0",
-    "github>aquaproj/aqua-renovate-config:installer-script#2.8.0(install/aqua.zsh)"
+    "github>aquaproj/aqua-renovate-config#2.8.1",
+    "github>aquaproj/aqua-renovate-config:installer-script#2.8.1(install/aqua.zsh)"
   ],
   "packageRules": [
     {
