@@ -54,7 +54,7 @@ python = "3.13.4"
 ripgrep = "14.1.1"
 rust = "1.88.0"
 shellcheck = "0.10.0"
-shfmt = "3.11.0"
+shfmt = "3.12.0"
 stylua = "2.1.0"
 taplo = { version = "0.10.0", matching = "full" }
 ttyd = "1.7.7"
