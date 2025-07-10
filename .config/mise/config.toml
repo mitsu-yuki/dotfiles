@@ -62,7 +62,7 @@ usage = "2.1.1"
 vhs = "0.9.0"
 vivid = "0.10.1"
 websocat = "1.14.0"
-yq = "4.45.4"
+yq = "4.46.1"
 
 [settings]
 experimental = true
