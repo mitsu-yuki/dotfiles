@@ -15,12 +15,6 @@ if which helm; then
   source <(helm completion zsh)
 fi
 
-f() {
-  unfunction "${0}"
-  source <(pay-respects zsh --alias)
-  "${0}" "${@}"
-}
-
 # aws completion
 if which aws; then
   autoload -Uz bashcompinit && bashcompinit
@@ -30,4 +24,9 @@ fi
 # github cli completion
 if which gh; then
   source <(gh completion -s zsh)
+fi
+
+# gc cli completion
+if which gc; then
+  source <(gc completion zsh)
 fi
