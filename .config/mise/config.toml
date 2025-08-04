@@ -56,7 +56,7 @@ pipx = "1.7.1"
 "pipx:ansible-lint" = "25.7.0"
 python = "3.13.4"
 ripgrep = "14.1.1"
-shellcheck = "0.10.0"
+shellcheck = "0.11.0"
 shfmt = "3.12.0"
 stylua = "2.1.0"
 taplo = { version = "0.10.0", matching = "full" }
