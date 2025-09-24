@@ -26,6 +26,11 @@ if which gh; then
   source <(gh completion -s zsh)
 fi
 
+# gitlab cli completion
+if which glab; then
+  source <(glab completion -s zsh)
+fi
+
 # gc cli completion
 if which gc; then
   source <(gc completion zsh)
