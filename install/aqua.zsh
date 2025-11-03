@@ -2,7 +2,7 @@
 
 # install aquia
 if ! which aqua > /dev/null 2>&1;then
-  curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v4.0.3/aqua-installer | zsh
+  curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v4.0.4/aqua-installer | zsh
 fi
 
 # setup AQUA_GLOBAL_CONFIG
