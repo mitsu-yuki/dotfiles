@@ -24,7 +24,7 @@
       "alignment": "left",
       "segments": [
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "leading_diamond": "\ue0b6",
@@ -36,7 +36,7 @@
           "style": "diamond"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "{{ .UserName }}@{{ abbrev 12 .HostName }}",
@@ -47,7 +47,7 @@
           "style": "diamond"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none",
             "home_icon": "~",
             "style": "full"
@@ -60,7 +60,7 @@
           "style": "powerline"
         },
         {
-          "properties": {
+          "options": {
             "branch_icon": "\ue725 ",
             "cache_duration": "none",
             "cherry_pick_icon": "\ue29b ",
@@ -94,7 +94,7 @@
           ]
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "{{ if and (ne .Env.BG_JOBS \"0\") (ne .Env.BG_JOBS \"\") }} \uf085 {{ .Env.BG_JOBS }}{{ end }}",
@@ -112,7 +112,7 @@
       "alignment": "right",
       "segments": [
         {
-          "properties": {
+          "options": {
             "cache_duration": "none",
             "time_format": "15:04:05"
           },
@@ -131,7 +131,7 @@
       "alignment": "left",
       "segments": [
         {
-          "properties": {
+          "options": {
             "always_enabled": true,
             "cache_duration": "none"
           },
@@ -147,6 +147,6 @@
       "newline": true
     }
   ],
-  "version": 3,
+  "version": 4,
   "final_space": true
 }
