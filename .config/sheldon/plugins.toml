@@ -10,52 +10,43 @@ github = "romkatv/zsh-defer"
 
 # zsh-syntax-highlighting
 [plugins.zsh-syntax-highlighting]
-github = "zsh-users/zsh-syntax-highlighting"
 apply = ["defer"]
+github = "zsh-users/zsh-syntax-highlighting"
 
 # cutppuccin for zsh-syntax-highlighting
 [plugins.catppuccin-zsh-syntax-highlighting]
-remote = "https://raw.githubusercontent.com/catppuccin/zsh-syntax-highlighting/main/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh"
 apply = ["defer"]
+remote = "https://raw.githubusercontent.com/catppuccin/zsh-syntax-highlighting/main/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh"
 
 # autosuggestions
 [plugins.zsh-autosuggestions]
-github = "zsh-users/zsh-autosuggestions"
 apply = ["defer"]
+github = "zsh-users/zsh-autosuggestions"
 
 # history search
 [plugins.zsh-history-substring-search]
-github = "zsh-users/zsh-history-substring-search"
 apply = ["defer"]
+github = "zsh-users/zsh-history-substring-search"
 
 # add completion
 [plugins.zsh-completions]
-github = "zsh-users/zsh-completions"
 apply = ["defer"]
+github = "zsh-users/zsh-completions"
 
 # user settings
 [plugins.dotfiles-core]
-local = "~/dotfiles/.config/zsh/core"
 apply = ["source"]
+local = "~/dotfiles/.config/zsh/core"
 
 # user lazy settings
 [plugins.dotfiles-lazy]
-local = "~/dotfiles/.config/zsh/lazy"
 apply = ["defer"]
+local = "~/dotfiles/.config/zsh/lazy"
 
 # user plugins
 [plugins.dotfiles-plugins]
-local = "~/dotfiles/.config/zsh/extensions"
 apply = ["defer"]
-
-# user completion
-[plugins.completion-restic]
-remote = "https://raw.githubusercontent.com/restic/restic/master/doc/zsh-completion.zsh"
-apply = ["fpath"]
-
-# [plugins.completion-fd]
-# remote = "https://raw.githubusercontent.com/sharkdp/fd/master/contrib/completion/_fd"
-# apply = ["fpath"]
+local = "~/dotfiles/.config/zsh/extensions"
 
 [plugins.compinit]
 inline = 'autoload -Uz compinit && compinit'
