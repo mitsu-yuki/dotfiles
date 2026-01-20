@@ -1,13 +1,18 @@
 #!/usr/bin/env zsh
 
+# mise completion
+if which mise; then
+  source <(mise completion zsh)
+fi
+
 # kubectl completion
 if which kubectl; then
   source <(kubectl completion zsh)
 fi
 
-# mise completion
-if which mise; then
-  source <(mise completion zsh)
+# docker completion
+if which docker; then
+  source <(docker completion zsh)
 fi
 
 # find-fd completion
