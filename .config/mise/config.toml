@@ -51,7 +51,7 @@ shellcheck = "0.11.0"
 shfmt = "3.12.0"
 stylua = "2.1.0"
 taplo = {version = "0.10.0", matching = "full"}
-usage = "2.16.2"
+usage = "2.17.0"
 vhs = "0.9.0"
 vivid = "0.10.1"
 websocat = "1.14.0"
