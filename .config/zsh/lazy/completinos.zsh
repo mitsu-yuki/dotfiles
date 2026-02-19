@@ -61,3 +61,8 @@ fi
 if which restic; then
   source <(restic generate --zsh-completion -)
 fi
+
+# git-wt completion
+if mise which git-wt; then
+  source <(git wt --init zsh)
+fi
