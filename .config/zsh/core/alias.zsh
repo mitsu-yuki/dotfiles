@@ -21,3 +21,5 @@ fi
 function rgless() {
   rg -p "$@" | less -R
 }
+
+alias regen-completions='zsh -f ${ZDOTDIR:-$HOME}/bin/regen-completions.zsh'

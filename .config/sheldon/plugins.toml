@@ -48,6 +48,11 @@ local = "~/dotfiles/.config/zsh/lazy"
 apply = ["defer"]
 local = "~/dotfiles/.config/zsh/extensions"
 
+# must precede compinit so the cached _<tool> functions get indexed
+[plugins.completion-cache]
+apply = ["fpath"]
+local = "~/dotfiles/.config/zsh/.zfunc"
+
 [plugins.compinit]
 inline = 'autoload -Uz compinit && compinit'
 
