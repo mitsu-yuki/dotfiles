@@ -19,6 +19,6 @@ fi
   emulate -L zsh
   setopt local_options extended_glob
   if [[ -z "${ZSH_COMPLETION_CACHE}/.last-gen"(#qN.mh-24) ]]; then
-    zsh -f "${ZDOTDIR:-$HOME}/bin/regen-completions.zsh" >/dev/null 2>&1 &!
+    "${ZDOTDIR:-$HOME}/bin/regen-completions.zsh" >/dev/null 2>&1 &!
   fi
 }
