@@ -1,3 +1,6 @@
 .zcompdump
+.zcompdump.zwc
+.zfunc/*
+!.zfunc/.gitkeep
 .zkbd/
 .zshenv
