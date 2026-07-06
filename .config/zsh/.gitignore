@@ -4,3 +4,7 @@
 !.zfunc/.gitkeep
 .zkbd/
 .zshenv
+.zprofile
+.zcompcache/
+.zsh_history
+.zsh_sessions/
