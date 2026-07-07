@@ -1,24 +1,68 @@
 #!/usr/bin/env zsh
 
-# Most completions are pre-generated into $ZDOTDIR/.zfunc and loaded via fpath
-# (sheldon [plugins.completion-cache]). Only the non-fpath bits live here.
+# mise completion
+if which mise; then
+  source <(mise completion zsh)
+fi
 
-ZSH_COMPLETION_CACHE="${ZDOTDIR:-$HOME}/.zfunc"
+# kubectl completion
+if which kubectl; then
+  source <(kubectl completion zsh)
+fi
 
-if (( $+commands[aws] )) && (( $+commands[aws_completer] )); then
+# docker completion
+if which docker; then
+  source <(docker completion zsh)
+fi
+
+# find-fd completion
+if which fd; then
+  source <(fd --gen-completions zsh)
+fi
+
+# ripgrep completion
+if which rg; then
+  source <(rg --generate complete-zsh)
+fi
+
+# helm completion
+if which helm; then
+  source <(helm completion zsh)
+fi
+
+# aws completion
+if which aws; then
   autoload -Uz bashcompinit && bashcompinit
-  complete -C aws_completer aws
+  complete -C $(which aws_completer) aws
 fi
 
-if [[ -r "${ZSH_COMPLETION_CACHE}/git-wt-init.zsh" ]]; then
-  source "${ZSH_COMPLETION_CACHE}/git-wt-init.zsh"
+# github cli completion
+if which gh; then
+  source <(gh completion -s zsh)
 fi
 
-# Refresh in the background when the cache is missing or older than a day.
-() {
-  emulate -L zsh
-  setopt local_options extended_glob
-  if [[ -z "${ZSH_COMPLETION_CACHE}/.last-gen"(#qN.mh-24) ]]; then
-    "${ZDOTDIR:-$HOME}/bin/regen-completions.zsh" >/dev/null 2>&1 &!
-  fi
-}
+# gitlab cli completion
+if which glab; then
+  source <(glab completion -s zsh)
+fi
+
+# gc cli completion
+if which gc; then
+  source <(gc completion zsh)
+fi
+
+# rust completion
+if which rustup; then
+  source <(rustup completions zsh)
+  source <(rustup completions zsh cargo)
+fi
+
+# restic completion
+if which restic; then
+  source <(restic generate --zsh-completion -)
+fi
+
+# git-wt completion
+if mise which git-wt; then
+  source <(git wt --init zsh)
+fi
