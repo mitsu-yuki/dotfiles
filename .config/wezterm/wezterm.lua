@@ -10,6 +10,9 @@ config.window_padding = {
   bottom = 0,
 }
 
+-- tab bar
+config.show_new_tab_button_in_tab_bar = false
+
 -- window close alert
 -- default setting
 config.skip_close_confirmation_for_processes_named = {
