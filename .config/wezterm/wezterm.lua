@@ -7,7 +7,13 @@ local mac = wezterm.target_triple:find("darwin")
 -- window opacity
 config.window_background_opacity = 0.83
 config.window_padding = {
-  bottom = 0,
+  left = 2,
+  bottom = 2,
+}
+
+config.window_content_alignment = {
+  horizontal = "Left",
+  vertical = "Bottom",
 }
 
 -- tab bar
