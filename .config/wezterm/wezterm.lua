@@ -50,7 +50,7 @@ if mac then
 end
 
 -- key bind
--- Swtich activate tab for ALT + Number key
+-- Switch activate tab for ALT + Number key
 config.keys = {}
 for i = 1, 9 do
   table.insert(config.keys, {
