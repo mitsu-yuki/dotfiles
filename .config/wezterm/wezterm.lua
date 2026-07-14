@@ -18,6 +18,7 @@ config.window_content_alignment = {
 
 -- tab bar
 config.show_new_tab_button_in_tab_bar = false
+config.show_close_tab_button_in_tabs = false
 
 -- window close alert
 -- default setting
