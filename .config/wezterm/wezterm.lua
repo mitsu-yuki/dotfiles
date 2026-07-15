@@ -9,6 +9,16 @@ local mac = wezterm.target_triple:find("darwin")
 config.use_ime = true
 config.color_scheme = "Catppuccin Mocha"
 config.warn_about_missing_glyphs = false
+-- ### color palette Catppuccin Mocha (bubble tab bar)
+local mocha = {
+  mantle = "#181825",
+  surface0 = "#313244",
+  surface1 = "#45475a",
+  base = "#1e1e2e",
+  text = "#cdd6f4",
+  subtext0 = "#a6adc8",
+  blue = "#89b4fa",
+}
 
 -- ##  window
 config.window_background_opacity = 0.83
