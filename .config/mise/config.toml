@@ -2,7 +2,7 @@
 act = "0.2.89"
 air = "1.66.0"
 "aqua:8051Enthusiast/biodiff" = "1.2.1"
-"aqua:JanDeDobbeleer/oh-my-posh" = "29.32.0"
+"aqua:JanDeDobbeleer/oh-my-posh" = "29.33.0"
 "aqua:firecow/gitlab-ci-local" = "4.73.0"
 "aqua:k1LoW/git-wt" = "0.29.0"
 "aqua:neovim/neovim" = "0.12.4"
