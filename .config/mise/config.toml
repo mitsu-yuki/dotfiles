@@ -1,6 +1,6 @@
 [tools]
 act = "0.2.89"
-air = "1.67.1"
+air = "1.67.2"
 "aqua:8051Enthusiast/biodiff" = "1.2.1"
 "aqua:JanDeDobbeleer/oh-my-posh" = "29.34.0"
 "aqua:firecow/gitlab-ci-local" = "4.73.0"
