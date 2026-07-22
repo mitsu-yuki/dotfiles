@@ -65,3 +65,7 @@ idiomatic_version_file_enable_tools = []
 
 [settings.npm]
 package_manager = "pnpm"
+
+[tasks."textlint:setup"]
+description = "textlint本体とルールをまとめてインストール"
+run = "pnpm add -g textlint,textlint-rule-preset-ja-technical-writing,textlint-filter-rule-allowlist,textlint-rule-preset-ja-spacing,textlint-filter-rule-comments,textlint-rule-no-dropping-the-ra,textlint-rule-spellcheck-tech-word"
