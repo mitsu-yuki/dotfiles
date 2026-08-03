@@ -1,4 +1,5 @@
-.zcompdump
+.zcompdump*
+.zfunc/
 .zkbd/
 .zshenv
 .zprofile
