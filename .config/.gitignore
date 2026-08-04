@@ -2,6 +2,7 @@ autostart/
 background
 Code/
 coderv2/
+com.smoothcsv.desktop/
 configstore/
 dconf/
 enchant/
@@ -16,8 +17,10 @@ freerdp/
 gedit
 gh/
 ghidra/
+git/
 github-copilot/
 glab-cli/
+glow/
 gnome-control-center/
 GNOME-xdg-terminals.list
 go
@@ -26,15 +29,18 @@ gpick/
 gsconnect/
 .gsd-keyboard.settings-ported
 gtk-3.0/
+herdr/
 htop/
 ibus/
 ibus-mozc-gnome-initial-setup-done
 JetBrains/
+jj/
 lazygit/
 libreoffice/
 Mattermost/
 menus/
 mimeapps.list
+minimal-dots
 monitors.xml
 monitors.xml~
 mono.addins/
@@ -51,6 +57,7 @@ thefuck/
 tiling-assistant/
 totem/
 Typora/
+typos-lsp/
 ubuntu-xdg-terminals.list
 user-dirs.dirs
 user-dirs.locale
