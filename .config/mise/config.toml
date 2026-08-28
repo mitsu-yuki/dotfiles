@@ -49,7 +49,7 @@ python = "3.14.7"
 ripgrep = "15.2.0"
 rust = "latest"
 shellcheck = "0.11.0"
-shfmt = "3.13.1"
+shfmt = "3.14.0"
 stylua = "2.5.2"
 taplo = {version = "0.10.0", matching = "full"}
 tree-sitter = "0.26.13"
