@@ -62,6 +62,7 @@ yq = "4.53.6"
 [settings]
 experimental = true
 idiomatic_version_file_enable_tools = []
+minimum_release_age = "7d"
 
 [settings.npm]
 package_manager = "pnpm"
