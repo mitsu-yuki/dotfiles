@@ -1,66 +1,34 @@
 #!/usr/bin/env zsh
 
 # LS_COLORS
-if which vivid > /dev/null 2>&1;then
+if which vivid >/dev/null 2>&1; then
   export LS_COLORS=$(vivid generate catppuccin-mocha)
 fi
 
 # oh-my-posh
-if which oh-my-posh > /dev/null 2>&1;then
+# git などの重いセグメントは streaming (config の "streaming") で非同期に描画される
+if which oh-my-posh >/dev/null 2>&1; then
   theme="catppuccin"
-  setopt prompt_subst # enable command substition in prompt
 
-  function prompt_lite_cmd() {
-      oh-my-posh print primary --config "${XDG_CONFIG_HOME}/oh-my-posh/${theme}.lite.omp.json" --shell zsh
+  # rc 読み込み時点では oh-my-posh が mise の shim に解決され 100ms ほど遅いため、
+  # mise の precmd フックで PATH が実体に切り替わった後の初回 precmd で init する
+  function _omp_lazy_init() {
+    add-zsh-hook -d precmd _omp_lazy_init
+    eval "$(oh-my-posh init zsh --config "${XDG_CONFIG_HOME}/oh-my-posh/${theme}.omp.json")"
+    add-zsh-hook -d precmd _omp_precmd
+    add-zsh-hook precmd _omp_precmd_guard
+    _omp_precmd
   }
-  function prompt_full_cmd() {
-      oh-my-posh print primary --config "${XDG_CONFIG_HOME}/oh-my-posh/${theme}.omp.json" --shell zsh
-  }
-  function background_jobs() {
-    export BG_JOBS=$(jobs | wc -l | xargs)
-  }
+  add-zsh-hook precmd _omp_lazy_init
 
-  background_jobs
-  PROMPT='$(prompt_lite_cmd)'
-  ASYNC_PROC=0
-  function chpwd() {
-      BG_JOBS=$(background_jobs)
-      PROMPT='$(prompt_lite_cmd)'
-  }
-
-  function precmd() {
-    function async() {
-      # save to temp file
-      background_jobs
-      printf "%s" "$(prompt_full_cmd)" > "/tmp/zsh_prompt_$$"
-      # signal parent
-      kill -s USR1 $$
-    }
-
-    # kill child if necessary
-    if [[ "${ASYNC_PROC}" != 0 ]]; then
-        kill -s HUP $ASYNC_PROC >/dev/null 2>&1 || :
-    fi
-    # start background computation
-    async &!
-    ASYNC_PROC=$!
-    [ -z $PRINT_NEW_LINE ] && PRINT_NEW_LINE=1 || echo ""
-  }
-
-  function TRAPUSR1() {
-    # read from temp file
-    PROMPT="$(cat /tmp/zsh_prompt_$$)"
-    # remove the temp file
-    \rm /tmp/zsh_prompt_$$
-
-    # reset proc number
-    ASYNC_PROC=0
-
-    # redisplay
-    zle && zle reset-prompt
-
-    # prepare for next
-    background_jobs
-    PROMPT="$(prompt_lite_cmd)"
+  # zsh-defer はタスクごとに precmd フックを再実行する。そのたびに描画すると
+  # oh-my-posh のプロンプトカウントが進み、初回プロンプトでも先頭の空行
+  # (最初のブロックの "newline") が省略されなくなるため、defer 中は描画しない
+  function _omp_return() { return $1 }
+  function _omp_precmd_guard() {
+    local -a ps=("${pipestatus[@]}")
+    (( ${+zsh_defer_options} )) && return ${ps[-1]}
+    # _omp_precmd が参照する $? と pipestatus を復元してから呼ぶ
+    eval "${(j: | :)${(@)ps/#/_omp_return }}; _omp_precmd"
   }
 fi
