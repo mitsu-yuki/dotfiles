@@ -33,9 +33,6 @@
           "style": "diamond"
         },
         {
-          "options": {
-            "cache_duration": "none"
-          },
           "template": "{{ .UserName }}@{{ abbrev 12 .HostName }}",
           "foreground": "p:text",
           "powerline_symbol": "\ue0b4",
@@ -74,7 +71,7 @@
           "type": "git",
           "style": "powerline",
           "templates": [
-            "{{ if .UpstreamIcon }} {{ .UpstreamIcon }}{{ else }} \uf1d3 {{ end }}",
+            "{{ if .UpstreamIcon }} {{ .UpstreamIcon }} {{ else }} \uf1d3 {{ end }}",
             " {{ .HEAD }}",
             "{{ if .Working.Changed }}",
             "{{ if .Staging.Added }} \uf055 {{ .Staging.Added }}{{ end }}",
@@ -88,9 +85,6 @@
           ]
         },
         {
-          "options": {
-            "cache_duration": "none"
-          },
           "template": "{{ if gt .Jobs 0 }} \uf085 {{ .Jobs }}{{ end }}",
           "foreground": "p:text",
           "powerline_symbol": "\ue0b4",
