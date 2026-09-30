@@ -22,6 +22,7 @@ github-copilot/
 glab-cli/
 glow/
 gnome-control-center/
+gnome-initial-setup/
 GNOME-xdg-terminals.list
 go
 gopls/
@@ -58,6 +59,7 @@ tiling-assistant/
 totem/
 Typora/
 typos-lsp/
+ubuntu-insights/
 ubuntu-xdg-terminals.list
 user-dirs.dirs
 user-dirs.locale
