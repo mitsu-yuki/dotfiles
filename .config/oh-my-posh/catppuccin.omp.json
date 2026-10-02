@@ -54,9 +54,10 @@
         },
         {
           "options": {
-            "branch_icon": "\ue725 ",
+            "branch_icon": "\uf126 ",
             "cherry_pick_icon": "\ue29b ",
             "commit_icon": "\uf417 ",
+            "git_icon": "\ue5fb",
             "merge_icon": "\ue727 ",
             "no_commits_icon": "\uf0c3 ",
             "rebase_icon": "\ue728 ",
@@ -73,15 +74,14 @@
           "templates": [
             "{{ if .UpstreamIcon }} {{ .UpstreamIcon }} {{ else }} \uf1d3 {{ end }}",
             " {{ .HEAD }}",
-            "{{ if .Working.Changed }}",
-            "{{ if .Staging.Added }} \uf055 {{ .Staging.Added }}{{ end }}",
-            "{{ if .Staging.Modified }} \uf055 {{ .Staging.Modified }}{{ end }}",
-            "{{ if .Working.Modified }} \uf06a {{ .Working.Modified }}{{ end }}",
-            "{{ if .Working.Untracked }} \uf059 {{ .Working.Untracked }}{{ end }}",
-            "{{ end }}",
-            "{{ if .Ahead }} \uf01b {{ .Ahead }}{{ end }}",
             "{{ if .Behind }} \uf01a {{ .Behind }}{{ end }}",
-            "{{ if gt .StashCount 0 }} \uf01c {{ .StashCount }}{{end}}"
+            "{{ if .Ahead }} \uf01b {{ .Ahead }}{{ end }}",
+            "{{ if or (ne .PushAhead .Ahead) (ne .PushBehind .Behind) }}{{ if .PushBehind }} \u21e0{{ .PushBehind }}{{ end }}{{ if .PushAhead }}{{ if not .PushBehind }} {{ end }}\u21e2{{ .PushAhead }}{{ end }}{{ end }}",
+            "{{ if gt .StashCount 0 }} \uf01c {{ .StashCount }}{{ end }}",
+            "{{ if gt .Working.Unmerged 0 }} ~{{ .Working.Unmerged }}{{ end }}",
+            "{{ $staged := add .Staging.Added .Staging.Modified .Staging.Deleted .Staging.Moved }}{{ if gt $staged 0 }} \uf055 {{ $staged }}{{ end }}",
+            "{{ $unstaged := add .Working.Modified .Working.Deleted }}{{ if gt $unstaged 0 }} \uf06a {{ $unstaged }}{{ end }}",
+            "{{ if gt .Working.Untracked 0 }} \uf059 {{ .Working.Untracked }}{{ end }}"
           ]
         },
         {
