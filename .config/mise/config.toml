@@ -50,7 +50,7 @@ ripgrep = "15.2.0"
 rust = "1.99.0"
 shellcheck = "0.11.0"
 shfmt = "3.14.1"
-stylua = "2.5.2"
+stylua = "2.6.0"
 taplo = {version = "0.10.0", matching = "full"}
 tree-sitter = "0.27.1"
 usage = "6.12.1"
