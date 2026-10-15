@@ -1,1 +1,5 @@
-words = ["pnpm"]
+words = [
+    "mise",
+    "pnpm",
+    "usecase",
+]
