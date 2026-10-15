@@ -64,6 +64,7 @@ ubuntu-xdg-terminals.list
 user-dirs.dirs
 user-dirs.locale
 VirtualBox/
+wails/
 wireshark/
 xdg-terminals.list
 yelp/
