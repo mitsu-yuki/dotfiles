@@ -85,6 +85,19 @@
           ]
         },
         {
+          "options": {
+            "display_mode": "environment",
+            "fetch_virtual_env": true,
+            "fetch_version": false
+          },
+          "template": " \ue235 {{ .Venv }}",
+          "foreground": "p:text",
+          "powerline_symbol": "\ue0b4",
+          "background": "p:green",
+          "type": "python",
+          "style": "powerline"
+        },
+        {
           "template": "{{ if gt .Jobs 0 }} \uf085 {{ .Jobs }}{{ end }}",
           "foreground": "p:text",
           "powerline_symbol": "\ue0b4",
