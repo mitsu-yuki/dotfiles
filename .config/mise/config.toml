@@ -1,5 +1,5 @@
 [tools]
-act = "0.2.89"
+act = "0.2.91"
 air = "1.67.4"
 "aqua:8051Enthusiast/biodiff" = "1.2.1"
 "aqua:JanDeDobbeleer/oh-my-posh" = "31.9.1"
