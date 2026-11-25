@@ -61,6 +61,7 @@ yq = "4.54.3"
 
 [settings]
 experimental = true
+http_timeout = "600"
 idiomatic_version_file_enable_tools = []
 minimum_release_age = "7d"
 minimum_release_age_excludes = ["usage", "claude"]
